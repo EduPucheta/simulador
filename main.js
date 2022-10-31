@@ -1,5 +1,18 @@
 var rate = 6.2 // Esta variable es el valor de la inflación mensual//
 
+//Funcion cntructora de tabla de cuotas.
+
+class cuotas{
+  constructor(a,b){
+    this.cuota=a,
+    this.cuota=b
+  }
+}
+
+const prueba = new cuotas("Cuota 1","$200")
+
+console.log(prueba)
+
 
 //Esta formula calcula la suma de todas las cuotas y lo muestra cuando hacés click en el boton calcular//
 function myFunction(e) {
@@ -24,13 +37,27 @@ function myFunction(e) {
     const valoractual = valordelacuota4 / rate * (1 - Math.pow(1 + rate2, cantidaddecuotas));
     var valoractualresult2 = 0;
     const valoractualDeCadaCuota=[]
+    const numeroDeCadaCuota = []
     // Acá se calcula el valor actual de la suma de las cuotas//
-    for(var i = 0; i <= cantidaddecuotas; i+=1){
-      valoractualresult = valordelacuota4 / Math.pow(1+rate2,cantidaddecuotas);
+    for(var i = 0; i < cantidaddecuotas; i+=1){
+      valoractualresult = valordelacuota4 / Math.pow(1+rate2,i);
       valoractualresult2 = valoractualresult2 + valoractualresult ;
       valoractualDeCadaCuota.push(valoractualresult)
+      numeroDeCadaCuota.push("Cuota Nº " + (i+1))
     }
+    const arr1 = numeroDeCadaCuota;
+    const arr2 = valoractualDeCadaCuota;
+
+    const obj = {};
+
+    arr1.forEach((element, index) => {
+    obj[element] = arr2[index];
+});
+
+    // 👉️ {name: 'Tom', age: 30, country: 'Chile'}
+    console.log(obj);
     console.log(valoractualDeCadaCuota)
+    console.log(numeroDeCadaCuota )
     document.getElementById('mensajederesultado2').textContent =  "El valor actual de las cuotas es: "
     document.getElementById('spanResult2').textContent = formatter.format(valoractualresult2) ;
     const precioencontado3 = document.getElementById('precioencontado').value;
@@ -43,7 +70,8 @@ function myFunction(e) {
     if(precioencontado<valoractualresult2){
       document.getElementById('mensajederesultado4').textContent =  "Te conviene en contado."
     }
-    console.log("Precio en contado "+precioencontado)
+    let myString = JSON.stringify(obj);
+    document.getElementById("mensajederesultado5").innerHTML = myString;
     document.getElementById('resultado__detalle').textContent =  "El cálculo asume que los ingresos mensuales aumentan a la par que la inflación. " + "La inflación estimada mensual para este cálculo es " + rate +"%.";
 
   }
