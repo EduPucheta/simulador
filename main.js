@@ -23,11 +23,14 @@ function myFunction(e) {
     rate2 = parseFloat(rate) / 100.0;
     const valoractual = valordelacuota4 / rate * (1 - Math.pow(1 + rate2, cantidaddecuotas));
     var valoractualresult2 = 0;
+    const valoractualDeCadaCuota=[]
     // Acá se calcula el valor actual de la suma de las cuotas//
     for(var i = 0; i <= cantidaddecuotas; i+=1){
       valoractualresult = valordelacuota4 / Math.pow(1+rate2,cantidaddecuotas);
       valoractualresult2 = valoractualresult2 + valoractualresult ;
+      valoractualDeCadaCuota.push(valoractualresult)
     }
+    console.log(valoractualDeCadaCuota)
     document.getElementById('mensajederesultado2').textContent =  "El valor actual de las cuotas es: "
     document.getElementById('spanResult2').textContent = formatter.format(valoractualresult2) ;
     const precioencontado3 = document.getElementById('precioencontado').value;
