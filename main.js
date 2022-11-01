@@ -40,7 +40,7 @@ function myFunction(e) {
     const numeroDeCadaCuota = []
     // Acá se calcula el valor actual de la suma de las cuotas//
     for(var i = 0; i < cantidaddecuotas; i+=1){
-      valoractualresult = valordelacuota4 / Math.pow(1+rate2,i);
+      valoractualresult = valordelacuota4 / Math.pow(1+rate2,i+1);
       valoractualresult2 = valoractualresult2 + valoractualresult ;
       valoractualDeCadaCuota.push(valoractualresult)
       numeroDeCadaCuota.push("Cuota Nº " + (i+1))
