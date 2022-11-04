@@ -54,7 +54,6 @@ function myFunction(e) {
     obj[element] = arr2[index];
 });
 
-    // 👉️ {name: 'Tom', age: 30, country: 'Chile'}
     console.log(obj);
     console.log(valoractualDeCadaCuota)
     console.log(numeroDeCadaCuota )
@@ -71,7 +70,6 @@ function myFunction(e) {
       document.getElementById('mensajederesultado4').textContent =  "Te conviene en contado."
     }
     let myString = JSON.stringify(obj);
-    // document.getElementById("mensajederesultado5").innerHTML = myString;
     document.getElementById('resultado__detalle').textContent =  "El cálculo asume que los ingresos mensuales aumentan a la par que la inflación. " + "La inflación estimada mensual para este cálculo es " + rate +"%.";
     document.getElementById('title_grafica').textContent =  "Valor actual de cada cuota"
 
