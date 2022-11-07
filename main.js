@@ -14,6 +14,24 @@ const prueba = new cuotas("Cuota 1","$200")
 console.log(prueba)
 
 
+
+// Intento para aplicar a todos los elementos
+var buttonArray = document.querySelectorAll('.cuotas');
+
+buttonArray.forEach(function(i) {
+  i.addEventListener('click', function(b) {
+    buttonArray[0].classList.remove("selected")
+    buttonArray[1].classList.remove("selected")
+    buttonArray[2].classList.remove("selected")
+    buttonArray[3].classList.remove("selected")
+    buttonArray[4].classList.remove("selected")
+    buttonArray[5].classList.remove("selected")
+    i.classList.add("selected");
+  })
+});
+
+
+
 //Esta formula calcula la suma de todas las cuotas y lo muestra cuando hacés click en el boton calcular//
 function myFunction(e) {
     const cantidaddecuotas = document.getElementById('cantidaddecuotas').value;
@@ -22,7 +40,7 @@ function myFunction(e) {
     const valordelacuota4 = valordelacuota2.replace(',', '');
     document.getElementById('mensajederesultado').textContent =  "La suma de las cuotas es: "
     document.getElementById('spanResult').textContent = formatter.format(parseFloat(valordelacuota4) * parseFloat(cantidaddecuotas)) ;
-    event.preventDefault();
+    // event.preventDefault();
     PV();
   }
 

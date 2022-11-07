@@ -98,7 +98,9 @@ html body .cuotas__app form .chips__cuotas {
   display: flex;
   flex-wrap: wrap;
 }
-html body .cuotas__app form .chips__cuotas button {
+html body .cuotas__app form .chips__cuotas input {
+  margin-left: 5px;
+  margin-right: 5px;
   margin-top: 10px;
   border: none;
   box-shadow: none;
@@ -111,12 +113,22 @@ html body .cuotas__app form .chips__cuotas button {
   color: black;
   transition-duration: 0.3s;
 }
-html body .cuotas__app form .chips__cuotas .boton {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-html body .cuotas__app form .chips__cuotas .boton:hover {
+html body .cuotas__app form .chips__cuotas .selected {
   background-color: #4535CC;
+  color: white;
+}
+html body .cuotas__app form .chips__cuotas button {
+  margin-top: 10px;
+  border: none;
+  box-shadow: none;
+  border-radius: 100px;
+  max-height: 30px;
+  width: 100px;
+  font-size: small;
+  padding: 10px;
+  background-color: #e5e5e5;
+  color: black;
+  transition-duration: 0.3s;
 }
 html body .cuotas__app form #cantidaddecuotas {
   display: none;

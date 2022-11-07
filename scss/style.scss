@@ -48,9 +48,29 @@ html {
         font-family: 'Inter';
         font-style: normal;
         font-weight: 800;
+
         .chips__cuotas{
           display: flex;
           flex-wrap: wrap;
+          input{
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 10px;
+            border: none;
+            box-shadow: none;
+            border-radius: 100px;
+            max-height: 30px;
+            width: 100px;
+            font-size: small;
+            padding: 10px;
+            background-color: $color-chips;
+            color: black;
+            transition-duration: 0.3s;
+          }
+          .selected{
+            background-color: $color-fondo;
+            color: white
+          }
           button{
             margin-top: 10px;
             border: none;
@@ -64,13 +84,9 @@ html {
             color: black;
             transition-duration: 0.3s;
           }
-          .boton{
-            margin-left: 5px;
-            margin-right: 5px;
-            &:hover{
-              background-color: $color-fondo;
-            }
-          }
+
+
+          
         }
         #cantidaddecuotas{
           display: none;

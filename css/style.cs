@@ -3,6 +3,7 @@ npm init
 sass --watch scss/style.scss css/style.css 
 */
 .input {
+  text-align: left;
   /* Button */
   box-sizing: border-box;
   /* Auto layout */
@@ -92,6 +93,33 @@ html body .cuotas__app form {
   /* Hide default HTML checkbox */
   /* The slider */
   /* Rounded sliders */
+}
+html body .cuotas__app form .chips__cuotas {
+  display: flex;
+  flex-wrap: wrap;
+}
+html body .cuotas__app form .chips__cuotas button {
+  margin-top: 10px;
+  border: none;
+  box-shadow: none;
+  border-radius: 100px;
+  max-height: 30px;
+  width: 100px;
+  font-size: small;
+  padding: 10px;
+  background-color: #e5e5e5;
+  color: black;
+  transition-duration: 0.3s;
+}
+html body .cuotas__app form .chips__cuotas .boton {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+html body .cuotas__app form .chips__cuotas .boton:hover {
+  background-color: #4535CC;
+}
+html body .cuotas__app form #cantidaddecuotas {
+  display: none;
 }
 html body .cuotas__app form .label {
   display: flex;
@@ -198,6 +226,7 @@ html body .cuotas__app form button {
   border-radius: 10px;
   color: #FFFFFF;
   cursor: pointer;
+  transition: 0.3s;
 }
 html body .cuotas__app form button:disabled {
   box-sizing: border-box;
