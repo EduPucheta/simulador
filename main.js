@@ -51,8 +51,13 @@ function myFunction(e) {
     const valordelacuota = document.getElementById('valordelacuota').value;
     const valordelacuota2 = valordelacuota.replace('$', '');
     const valordelacuota4 = valordelacuota2.replace(',', '');
+    anualInflation = document.querySelector('#inflacion__number').value
+    console.log("Inflacion anual:"+ anualInflation)
+    // Cálculo de la tasa efectiva mensual a partir de la anual
+    rate = (Math.pow((1+anualInflation/100),1/12)-1)*100 
+    console.log("Inflacion mensual:"+ rate)
     rate2 = parseFloat(rate) / 100.0;
-    const valoractual = valordelacuota4 / rate * (1 - Math.pow(1 + rate2, cantidaddecuotas));
+    //const valoractual = valordelacuota4 / rate * (1 - Math.pow(1 + rate2, cantidaddecuotas));
     var valoractualresult2 = 0;
     const valoractualDeCadaCuota=[]
     const numeroDeCadaCuota = []

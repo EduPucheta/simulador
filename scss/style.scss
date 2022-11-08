@@ -16,13 +16,21 @@ html {
   min-height: 100%;
 
   body {
-    h2{
-      margin-bottom: 10px;
-    }    
-    margin: 25px;
     max-height: 70%;
     font-family: 'Inter';
-    background-color: #F1F1FA;
+    background-color: $color-fondo-mobile;
+    nav{
+      background-color: $color-fondo;
+      height: 100px;
+    }
+    h1{
+      font-size:x-large;
+    }
+    h2{
+      font-size: medium;
+      margin-bottom: 10px;
+    }    
+
 
     @media (min-width:1025px) {
       /* big landscape tablets, laptops, and desktops */
@@ -30,6 +38,7 @@ html {
     }
 
     .cuotas__app {
+      margin: 25px;
       @media (min-width:1025px) {
         /* big landscape tablets, laptops, and desktops */
         max-width: 1000px;
@@ -38,6 +47,9 @@ html {
         margin-right: 25%;
         background-color: #F1F1FA;
         padding: 5%;
+        border-radius: 7px;
+        box-shadow: 10px 10px 5px rgb(87, 87, 87);
+
       }
 
 
@@ -59,17 +71,22 @@ html {
             border: none;
             box-shadow: none;
             border-radius: 100px;
-            max-height: 30px;
+            max-height: 35px;
             width: 100px;
             font-size: small;
             padding: 10px;
             background-color: $color-chips;
             color: black;
             transition-duration: 0.3s;
+            &:hover{
+              background-color: $color-fondo;
+              color: white;
+            }
           }
+
           .selected{
             background-color: $color-fondo;
-            color: white
+            color: white;
           }
           button{
             margin-top: 10px;
@@ -83,6 +100,7 @@ html {
             background-color: $color-chips;
             color: black;
             transition-duration: 0.3s;
+            
           }
 
 
@@ -90,7 +108,7 @@ html {
         }
         #cantidaddecuotas{
           display: none;
-          
+          transition-duration: 0.3s;
         }
         .label {
           display: flex;
@@ -209,14 +227,17 @@ input:checked + .slider:before {
           left: 16px;
           top: 16px;
           /* Primary */
-          background: #4535CC;
+          background: $color-chips;
           /* Primary */
-          border: 2px solid #4535CC;
-          border-radius: 10px;
-          color: #FFFFFF;
+          border: none;
+          border-radius: 7px;
+          color: black;
           cursor: pointer;
           transition: 0.3s;
-
+          &:hover{
+            background-color: rgb(144, 0, 255);
+            color: white;
+          }
           &:disabled {
             box-sizing: border-box;
             /* Auto layout */
@@ -224,7 +245,7 @@ input:checked + .slider:before {
             background: #372AA3;
             opacity: 0.4;
             /* Primary Dark */
-            border: 2px solid #372AA3;
+            border: 2px solid $color-fondo;
             border-radius: 10px;
           }
         }

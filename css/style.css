@@ -58,19 +58,29 @@ html {
   min-height: 100%;
 }
 html body {
-  margin: 25px;
   max-height: 70%;
   font-family: "Inter";
   background-color: #F1F1FA;
 }
+html body nav {
+  background-color: #003366;
+  height: 100px;
+}
+html body h1 {
+  font-size: x-large;
+}
 html body h2 {
+  font-size: medium;
   margin-bottom: 10px;
 }
 @media (min-width: 1025px) {
   html body {
     /* big landscape tablets, laptops, and desktops */
-    background-color: #4535CC;
+    background-color: #003366;
   }
+}
+html body .cuotas__app {
+  margin: 25px;
 }
 @media (min-width: 1025px) {
   html body .cuotas__app {
@@ -81,6 +91,8 @@ html body h2 {
     margin-right: 25%;
     background-color: #F1F1FA;
     padding: 5%;
+    border-radius: 7px;
+    box-shadow: 10px 10px 5px rgb(87, 87, 87);
   }
 }
 html body .cuotas__app form {
@@ -105,7 +117,7 @@ html body .cuotas__app form .chips__cuotas input {
   border: none;
   box-shadow: none;
   border-radius: 100px;
-  max-height: 30px;
+  max-height: 35px;
   width: 100px;
   font-size: small;
   padding: 10px;
@@ -113,8 +125,12 @@ html body .cuotas__app form .chips__cuotas input {
   color: black;
   transition-duration: 0.3s;
 }
+html body .cuotas__app form .chips__cuotas input:hover {
+  background-color: #003366;
+  color: white;
+}
 html body .cuotas__app form .chips__cuotas .selected {
-  background-color: #4535CC;
+  background-color: #003366;
   color: white;
 }
 html body .cuotas__app form .chips__cuotas button {
@@ -132,6 +148,7 @@ html body .cuotas__app form .chips__cuotas button {
 }
 html body .cuotas__app form #cantidaddecuotas {
   display: none;
+  transition-duration: 0.3s;
 }
 html body .cuotas__app form .label {
   display: flex;
@@ -232,13 +249,17 @@ html body .cuotas__app form button {
   left: 16px;
   top: 16px;
   /* Primary */
-  background: #4535CC;
+  background: #e5e5e5;
   /* Primary */
-  border: 2px solid #4535CC;
-  border-radius: 10px;
-  color: #FFFFFF;
+  border: none;
+  border-radius: 7px;
+  color: black;
   cursor: pointer;
   transition: 0.3s;
+}
+html body .cuotas__app form button:hover {
+  background-color: rgb(144, 0, 255);
+  color: white;
 }
 html body .cuotas__app form button:disabled {
   box-sizing: border-box;
@@ -247,7 +268,7 @@ html body .cuotas__app form button:disabled {
   background: #372AA3;
   opacity: 0.4;
   /* Primary Dark */
-  border: 2px solid #372AA3;
+  border: 2px solid #003366;
   border-radius: 10px;
 }
 html body .cuotas__app #resultados {
