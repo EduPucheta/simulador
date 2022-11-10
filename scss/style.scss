@@ -14,14 +14,15 @@ sass --watch scss/style.scss css/style.css
 
 html {
   min-height: 100%;
-
   body {
     max-height: 70%;
     font-family: 'Inter';
-    background-color: $color-fondo-mobile;
+    background-color: #f7aaff;
+    background-image: linear-gradient(62deg, #f7aaff 0%, #F7CE68 100%);
+    
     nav{
       background-color: $color-fondo;
-      height: 100px;
+      height: 80px;
     }
     h1{
       font-size:x-large;
