@@ -1,22 +1,7 @@
 var rate = 6.2 // Esta variable es el valor de la inflación mensual//
 
-//Funcion cntructora de tabla de cuotas.
-
-class cuotas{
-  constructor(a,b){
-    this.cuota=a,
-    this.cuota=b
-  }
-}
-
-const prueba = new cuotas("Cuota 1","$200")
-
-console.log(prueba)
-
-
-
-// Intento para aplicar a todos los elementos
-var buttonArray = document.querySelectorAll('.cuotas');
+// Función para agregar clases a los botones seleccionados
+var  buttonArray = document.querySelectorAll('.cuotas');
 
 buttonArray.forEach(function(i) {
   i.addEventListener('click', function(b) {
@@ -27,9 +12,49 @@ buttonArray.forEach(function(i) {
     buttonArray[4].classList.remove("selected")
     buttonArray[5].classList.remove("selected")
     i.classList.add("selected");
+    var x = document.getElementById('cantidaddecuotas');
+    // Esta parte esconde el input de cantidad custom de cuotas cuando le das click a otra opción de cuotas
+    if (i.value !== "Otra opción" && x.style.display === "flex") {
+      console.log("Ok")
+      x.style.display = "none";
+      x.value = null
+    } 
   })
 });
 
+// Función para agregar quitar clases cuando se inserta un valor en el input y agregar la clase selected al input
+var cantidadCuotas = document.querySelector('#cantidaddecuotas');
+console.log(cantidadCuotas)
+
+cantidadCuotas.addEventListener('input', function(b) {
+  buttonArray[0].classList.remove("selected")
+  buttonArray[1].classList.remove("selected")
+  buttonArray[2].classList.remove("selected")
+  buttonArray[3].classList.remove("selected")
+  buttonArray[4].classList.remove("selected")
+  cantidadCuotas.classList.add("selected");
+})
+
+//Esta función es para mostrar el mostrar el campo para ingresar más opciones de cuotas. 
+
+function showoptions3() {
+  var x = document.getElementById('cantidaddecuotas');
+  if (x.style.display === "flex") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "flex";
+    }
+  }
+
+//Esta función es para mostrar las opciones avanzadas. Aún no funciona la posibilidad de cambiar el valor de la inflación.
+function showoptions2() {
+  var x = document.getElementById('impuestosellos');
+  if (x.style.display === "flex") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "flex";
+    }
+  }
 
 
 //Esta formula calcula la suma de todas las cuotas y lo muestra cuando hacés click en el boton calcular//
@@ -134,27 +159,6 @@ new Chart($grafica, {
 
 cantidaddecuotas = document.getElementById('cantidaddecuotas').value;
 cantidaddecuotas.replace('$', '');
-
-//Esta función es para mostrar el mostrar el campo para ingresar más opciones de cuotas. 
-
-function showoptions3() {
-  var x = document.getElementById('cantidaddecuotas');
-  if (x.style.display === "flex") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "flex";
-    }
-  }
-
-//Esta función es para mostrar las opciones avanzadas. Aún no funciona la posibilidad de cambiar el valor de la inflación.
-function showoptions2() {
-  var x = document.getElementById('impuestosellos');
-  if (x.style.display === "flex") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "flex";
-    }
-  }
 
 
 var rate3 = document.getElementById("inflacion__number"); // Esta variable es para obtener el valor de la inflación (Aún no se está usando)//
