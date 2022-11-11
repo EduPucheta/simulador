@@ -55,6 +55,10 @@ function showoptions2() {
 
 //Esta formula calcula la suma de todas las cuotas y lo muestra cuando hacés click en el boton calcular//
 function myFunction(e) {
+  g = document.createElement('div');
+  g.setAttribute("id", "resultados");
+  document.querySelector(".cuotas__app").appendChild(g)
+  document.querySelector('#resultados').style.display = "flex"; 
   if( document.querySelector('.selected').hasAttribute("data-test")){
     cantidaddecuotas = parseFloat(document.querySelector('.selected').getAttribute("data-test")); 
   } else {

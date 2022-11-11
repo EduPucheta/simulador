@@ -75,14 +75,14 @@ html body h2 {
   font-size: medium;
   margin-bottom: 10px;
 }
-@media (min-width: 1025px) {
-  html body {
-    /* big landscape tablets, laptops, and desktops */
-    background-color: #003366;
-  }
-}
 html body .cuotas__app {
-  margin: 25px;
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #F1F1FA;
+  padding: 5%;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 @media (min-width: 1025px) {
   html body .cuotas__app {
@@ -120,7 +120,7 @@ html body .cuotas__app form .chips__cuotas input {
   box-shadow: none;
   border-radius: 100px;
   max-height: 35px;
-  width: 100px;
+  width: 90px;
   font-size: small;
   padding: 10px;
   background-color: #fce8b8;
@@ -274,7 +274,7 @@ html body .cuotas__app form button:disabled {
   border-radius: 10px;
 }
 html body .cuotas__app #resultados {
-  display: flex;
+  display: none;
   flex-direction: column;
   margin-top: 10px;
 }
