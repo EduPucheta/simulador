@@ -65,7 +65,8 @@ html body {
 }
 html body nav {
   background-color: #003366;
-  height: 80px;
+  height: 85px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 html body h1 {
   font-size: x-large;

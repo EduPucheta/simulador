@@ -123,7 +123,7 @@ function myFunction(e) {
     }
     let myString = JSON.stringify(obj);
     document.getElementById('resultado__detalle').textContent =  "El cálculo asume que los ingresos mensuales aumentan a la par que la inflación. " + "La inflación estimada mensual para este cálculo es " + rate +"%.";
-    document.getElementById('title_grafica').textContent =  "Valor actual de cada cuota (Es el valor de cada cuota a valor de hoy)"
+    document.getElementById('title_grafica').textContent =  "Valor actual de cada cuota (Es el valor de cada cuota como si la pagaras hoy)"
 
     // Obtener una referencia al elemento canvas del DOM
 const $grafica = document.querySelector("#grafica");
