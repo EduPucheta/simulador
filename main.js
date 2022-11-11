@@ -5,13 +5,21 @@ var  buttonArray = document.querySelectorAll('.cuotas');
 
 buttonArray.forEach(function(i) {
   i.addEventListener('click', function(b) {
+
     buttonArray[0].classList.remove("selected")
     buttonArray[1].classList.remove("selected")
     buttonArray[2].classList.remove("selected")
     buttonArray[3].classList.remove("selected")
     buttonArray[4].classList.remove("selected")
     buttonArray[5].classList.remove("selected")
-    i.classList.add("selected");
+    document.querySelector('#cantidaddecuotas').classList.remove("selected")
+
+    if (i.value !== "Otra opción"){
+      i.classList.add("selected");
+    }
+    if (i.value == "Otra opción") {
+      document.querySelector('#cantidaddecuotas').classList.add("selected")
+    } 
     var x = document.getElementById('cantidaddecuotas');
     // Esta parte esconde el input de cantidad custom de cuotas cuando le das click a otra opción de cuotas
     if (i.value !== "Otra opción" && x.style.display === "flex") {
@@ -22,18 +30,6 @@ buttonArray.forEach(function(i) {
   })
 });
 
-// Función para agregar quitar clases cuando se inserta un valor en el input y agregar la clase selected al input
-var cantidadCuotas = document.querySelector('#cantidaddecuotas');
-console.log(cantidadCuotas)
-
-cantidadCuotas.addEventListener('input', function(b) {
-  buttonArray[0].classList.remove("selected")
-  buttonArray[1].classList.remove("selected")
-  buttonArray[2].classList.remove("selected")
-  buttonArray[3].classList.remove("selected")
-  buttonArray[4].classList.remove("selected")
-  cantidadCuotas.classList.add("selected");
-})
 
 //Esta función es para mostrar el mostrar el campo para ingresar más opciones de cuotas. 
 
@@ -59,7 +55,11 @@ function showoptions2() {
 
 //Esta formula calcula la suma de todas las cuotas y lo muestra cuando hacés click en el boton calcular//
 function myFunction(e) {
-    const cantidaddecuotas = document.getElementById('cantidaddecuotas').value;
+  if( document.querySelector('.selected').hasAttribute("data-test")){
+    cantidaddecuotas = parseFloat(document.querySelector('.selected').getAttribute("data-test")); 
+  } else {
+    cantidaddecuotas = parseFloat(document.querySelector('.selected').value); 
+  } 
     const valordelacuota = document.getElementById('valordelacuota').value;
     const valordelacuota2 = valordelacuota.replace('$', '');
     const valordelacuota4 = valordelacuota2.replace(',', '');
@@ -71,8 +71,12 @@ function myFunction(e) {
 
 
   function PV() {
-    cantidaddecuotas = document.getElementById('cantidaddecuotas').value;
-    cantidaddecuotas.replace('$', '');
+    //Aquí se elije el valor de la cantidad de cuotas seleccionadas. si tiene el atributo data elige los botones si no el valor custom
+    if( document.querySelector('.selected').hasAttribute("data-test")){
+      cantidaddecuotas = parseFloat(document.querySelector('.selected').getAttribute("data-test")); 
+    } else {
+      cantidaddecuotas = parseFloat(document.querySelector('.selected').value); 
+    }
     const valordelacuota = document.getElementById('valordelacuota').value;
     const valordelacuota2 = valordelacuota.replace('$', '');
     const valordelacuota4 = valordelacuota2.replace(',', '');
@@ -119,7 +123,7 @@ function myFunction(e) {
     }
     let myString = JSON.stringify(obj);
     document.getElementById('resultado__detalle').textContent =  "El cálculo asume que los ingresos mensuales aumentan a la par que la inflación. " + "La inflación estimada mensual para este cálculo es " + rate +"%.";
-    document.getElementById('title_grafica').textContent =  "Valor actual de cada cuota"
+    document.getElementById('title_grafica').textContent =  "Valor actual de cada cuota (Es el valor de cada cuota a valor de hoy)"
 
     // Obtener una referencia al elemento canvas del DOM
 const $grafica = document.querySelector("#grafica");
