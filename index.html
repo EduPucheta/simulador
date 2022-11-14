@@ -33,9 +33,20 @@
     </a>
     </nav>
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Bienvenido a Mangos! </p>
+        <p>Te ayudamos a tomar mejores decisionees con tu dinero! </p>
+    </div>
+
+    </div>
     <div class="cuotas__app">
         <h1>Te ayudamos a hacer que tus mangos te rindan más</h1>
-        <h2>Elegi la cantidad de cuotas, el valor de cada una, el precio en contado y descubrí como te conviene pagar tu compra teniendo en cuenta la inflación</h2>
+        <h2>Elegi la cantidad de cuotas, el valor de cada una, el precio en contado y descubrí como te conviene pagar tu compra teniendo en cuenta la inflación. <button id="myBtn"></button> </h2>
+
         <form method="get" id="form1" class="._bg__input" autocomplete="off">
             <label for="cantidaddecuotas">Ingresá la cantidad de cuotas
                 <div class="chips__cuotas">
@@ -57,7 +68,7 @@
                     <p>Más opciones</p>
                     </div>
                 <div id="impuestosellos" >
-                    <label for="inflacion">Modificá el valor de la inflación mensual. Por defecto tomamos el índice del último mes de INDEC (Septiembre 2022: 6.2%) y la proyectamos a 12 meses.
+                    <label for="inflacion">Modificá el valor de la inflación anual. Por defecto tomamos el índice del último mes de INDEC (Septiembre 2022: 6.2%) y la proyectamos a 12 meses.
                         <input form="form1" type="number" id="inflacion__number" class="input label" name="inflacion"  value="105.8" min="0" max="10000" step="0.01" ></label>  
                 </div>
             <button type="button" form="form1"  id="submitbutton" value="Submit" onclick="myFunction()">CALCULAR</button>

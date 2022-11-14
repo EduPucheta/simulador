@@ -5,6 +5,8 @@ sass --watch scss/style.scss css/style.css
 
 @import "form_elements.scss";
 @import "variables.scss";
+@import "modal.scss";
+
 
 
 * {
@@ -56,7 +58,12 @@ html {
         box-shadow: 10px 10px 5px rgb(87, 87, 87);
 
       }
-
+      #myBtn {
+        background: url('../assets/images/help-icon.png') no-repeat; 
+        width: 16px;
+        height: 16px;
+        border: none;
+    }
 
       // background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(97, 186, 255, 1) 0%, rgba(166, 239, 253, 1) 90.1%);
       form {
