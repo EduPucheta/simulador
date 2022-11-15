@@ -34,7 +34,37 @@ html {
       font-size: medium;
       margin-bottom: 10px;
     }    
-
+    .modal-content{
+      .modal-content__title{
+        font-size: large;
+      }
+      .modal-content__start__button{
+        box-sizing: border-box;
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 24px;
+        gap: 10px;
+        width: 100%;
+        height: 44px;
+        left: 16px;
+        top: 16px;
+        /* Primary */
+        background: $color-chips;
+        /* Primary */
+        border: none;
+        border-radius: 7px;
+        color: black;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover{
+          background-color: rgb(144, 0, 255);
+          color: white;
+        }
+      }
+    }
  
 
 
@@ -58,10 +88,25 @@ html {
         box-shadow: 10px 10px 5px rgb(87, 87, 87);
 
       }
+      .main__text{
+        display: flex;
+        justify-content: right;
+        margin-bottom: 10px;
+        #myBtn2{
+          color: white;
+          height: 40px;
+          width: 200px;
+          text-align: center;
+          border: none;
+          background: $color-fondo ;
+          margin-bottom: auto;
+          border-radius: 7px;
+        }
+      }
       #myBtn {
         background: url('../assets/images/help-icon.png') no-repeat; 
-        width: 16px;
-        height: 16px;
+        width: 24px;
+        height: 24px;
         border: none;
     }
 
@@ -77,13 +122,17 @@ html {
           display: flex;
           flex-wrap: wrap;
           input{
+            text-align: center;
             margin-left: 5px;
             margin-right: 5px;
-            margin-top: 10px;
-            border: none;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 1px; 
+            border-style: solid;
+            border-color: rgb(198, 198, 198);
             box-shadow: none;
             border-radius: 100px;
-            max-height: 35px;
+            max-height: 37px;
             width: 90px;
             font-size: small;
             padding: 10px;
@@ -145,8 +194,10 @@ html {
             margin-bottom: 10px;
             cursor: pointer;
             p {
-              align-self: center;
+              vertical-align:baseline;
               margin-left: 5px;
+              margin-top: auto;
+              margin-bottom: auto;
             }
           }
         }

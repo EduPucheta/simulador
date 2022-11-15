@@ -32,6 +32,11 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
+// Cuando hacés click en empezar!
+document.querySelector(".modal-content__start__button").onclick = function() {
+  modal.style.display = "none";
+}
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
@@ -174,7 +179,7 @@ function myFunction(e) {
       document.getElementById('mensajederesultado4').textContent =  "Te conviene en contado."
     }
     let myString = JSON.stringify(obj);
-    document.getElementById('resultado__detalle').textContent =  "El cálculo asume que los ingresos mensuales aumentan a la par que la inflación. " + "La inflación estimada mensual para este cálculo es " + rate +"%.";
+    document.getElementById('resultado__detalle').textContent =  "El cálculo asume que los ingresos mensuales aumentan a la par que la inflación. " + "La inflación estimada mensual para este cálculo es " + Math.round(parseFloat( rate) *100)/100 +"%.";
     document.getElementById('title_grafica').textContent =  "Valor actual de cada cuota (Es el valor de cada cuota como si la pagaras hoy)"
 
     // Obtener una referencia al elemento canvas del DOM

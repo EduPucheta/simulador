@@ -32,35 +32,34 @@
       <img src=".\assets\mangos-logo.png" width="250px" height="60px" alt="">
     </a>
     </nav>
-
     <!-- The Modal -->
     <div id="myModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <p>Bienvenido a Mangos! </p>
-        <p>Te ayudamos a tomar mejores decisionees con tu dinero! </p>
+        <p class="modal-content__title">Bienvenido a Mangos! </p>
+        <p>Elegi la cantidad de cuotas, el valor de cada una, el precio en contado y descubrí como te conviene pagar tu compra teniendo en cuenta la inflación.</p>
+        <button class="modal-content__start__button">Empezar!</button>
     </div>
-
     </div>
     <div class="cuotas__app">
-        <h1>Te ayudamos a hacer que tus mangos te rindan más</h1>
-        <h2>Elegi la cantidad de cuotas, el valor de cada una, el precio en contado y descubrí como te conviene pagar tu compra teniendo en cuenta la inflación. <button id="myBtn"></button> </h2>
-
+        <div class="main__text">
+            <h1>Te ayudamos a hacer que tus mangos rindan más <button id="myBtn"></button></h1> 
+        </div>
         <form method="get" id="form1" class="._bg__input" autocomplete="off">
-            <label for="cantidaddecuotas">Ingresá la cantidad de cuotas
+            <label for="cantidaddecuotas">Cantidad de cuotas
                 <div class="chips__cuotas">
-                    <input type="button" class="cuotas" value="1 Cuota" placeholder="1 Cuota" data-test="1">
-                    <input type="button" class="cuotas" value="3 Coutas" data-test="3">
-                    <input type="button" class="cuotas" value="6 Coutas" data-test="6">
-                    <input type="button" class="cuotas" value="12 Coutas" data-test="12">
-                    <input type="button" class="cuotas" value="24 Coutas" data-test="24">
+                    <input type="button" class="cuotas" value="1 cuota" placeholder="1 Cuota" data-test="1">
+                    <input type="button" class="cuotas" value="3 coutas" data-test="3">
+                    <input type="button" class="cuotas" value="6 coutas" data-test="6">
+                    <input type="button" class="cuotas" value="12 coutas" data-test="12">
+                    <input type="button" class="cuotas" value="24 coutas" data-test="24">
                     <input type="button" class="cuotas" value="Otra opción" onclick="showoptions3()">
                 </div>
                 <input type="number" id="cantidaddecuotas" class="input label" name="cantidaddecuotas"  placeholder="Ejemplo: 6" min="1" max="10000"></label>
-            <label for="valordelacuota">Ingresá el valor cada cuota
+            <label for="valordelacuota">Valor de cada cuota
                 <input type="text" id="valordelacuota" class="input label" name="valordelacuota"  data-type="currency" placeholder="Ejemplo: $2,000"></label>
-            <label for="precioencontado">Ingresá el precio total pagando en contado
+            <label for="precioencontado">Precio total pagando en contado
                 <input type="text" id="precioencontado" class="input label" name="precioencontado" data-type="currency" placeholder="Ejemplo: $11,000"></label>
             <div class="advaced_options__withoptions">
                 <div class="advaced_options" onclick="showoptions2()">
@@ -71,7 +70,7 @@
                     <label for="inflacion">Modificá el valor de la inflación anual. Por defecto tomamos el índice del último mes de INDEC (Septiembre 2022: 6.2%) y la proyectamos a 12 meses.
                         <input form="form1" type="number" id="inflacion__number" class="input label" name="inflacion"  value="105.8" min="0" max="10000" step="0.01" ></label>  
                 </div>
-            <button type="button" form="form1"  id="submitbutton" value="Submit" onclick="myFunction()">CALCULAR</button>
+            <button type="button" form="form1"  id="submitbutton" value="Submit" onclick="myFunction()">Calcular</button>
         </form>
         <div id="resultados">
             <span id="mensajederesultado3"></span>
