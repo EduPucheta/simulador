@@ -111,8 +111,14 @@ html body h1 {
   font-size: x-large;
 }
 html body h2 {
-  font-size: medium;
+  font-size: large;
   margin-bottom: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bolder;
+}
+html body .modal-content {
+  max-width: 600px;
 }
 html body .modal-content .modal-content__title {
   font-size: large;
@@ -145,6 +151,7 @@ html body .modal-content .modal-content__start__button:hover {
 }
 html body .cuotas__app {
   margin-top: 20px;
+  margin-bottom: 40px;
   margin-left: 5%;
   margin-right: 5%;
   background-color: #F1F1FA;
@@ -228,6 +235,10 @@ html body .cuotas__app form .chips__cuotas .selected {
   background-color: #003366;
   color: white;
 }
+html body .cuotas__app form .chips__cuotas .selected2 {
+  background-color: #003366;
+  color: white;
+}
 html body .cuotas__app form .chips__cuotas button {
   margin-top: 10px;
   border: none;
@@ -242,6 +253,10 @@ html body .cuotas__app form .chips__cuotas button {
   transition-duration: 0.3s;
 }
 html body .cuotas__app form #cantidaddecuotas {
+  display: none;
+  transition-duration: 0.3s;
+}
+html body .cuotas__app form #cantidaddecuotas2 {
   display: none;
   transition-duration: 0.3s;
 }
@@ -368,19 +383,41 @@ html body .cuotas__app form button:disabled {
   border: 2px solid #003366;
   border-radius: 10px;
 }
-html body .cuotas__app #resultados {
-  display: none;
+
+#resultados {
+  display: flex;
   flex-direction: column;
-  margin-top: 10px;
 }
-html body .cuotas__app #resultados #mensajederesultado3 {
-  color: green;
+
+#resultados > * {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #F1F1FA;
+  padding: 5%;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-html body .cuotas__app #resultados #mensajederesultado4 {
-  color: red;
-}
-html body .cuotas__app #resultados #resultado__detalle {
-  font-size: small;
+@media (min-width: 1025px) {
+  #resultados > * {
+    /* big landscape tablets, laptops, and desktops */
+    max-width: 1000px;
+    margin-top: 50px;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: #F1F1FA;
+    padding: 5%;
+    border-radius: 7px;
+    box-shadow: 10px 10px 5px rgb(87, 87, 87);
+  }
+  #resultados > * #mensajederesultado4 {
+    color: red;
+  }
+  #resultados > * #resultado__detalle {
+    font-size: small;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

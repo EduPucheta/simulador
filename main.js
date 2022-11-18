@@ -1,4 +1,4 @@
-// Define el número de sesión 
+// MODAL DE BIENVENIDA EN PRIMERA SESIÓN
 
 var visits = Number(localStorage.getItem('visitCount'));
 var current = Boolean(sessionStorage.getItem('session'));
@@ -7,11 +7,6 @@ if (!current) {
 }
 localStorage.setItem('visitCount', visits);
 sessionStorage.setItem('session', true);
-
-
-
-
-// Modal de bienvenida
 
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -76,13 +71,40 @@ buttonArray.forEach(function(i) {
     var x = document.getElementById('cantidaddecuotas');
     // Esta parte esconde el input de cantidad custom de cuotas cuando le das click a otra opción de cuotas
     if (i.value !== "Otra opción" && x.style.display === "flex") {
-      console.log("Ok")
       x.style.display = "none";
       x.value = null
     } 
   })
 });
 
+// Función para agregar clases a los botones seleccionados
+var  buttonArray2 = document.querySelectorAll('.cuotas2');
+
+buttonArray2.forEach(function(i) {
+  i.addEventListener('click', function(b) {
+
+    buttonArray2[0].classList.remove("selected2")
+    buttonArray2[1].classList.remove("selected2")
+    buttonArray2[2].classList.remove("selected2")
+    buttonArray2[3].classList.remove("selected2")
+    buttonArray2[4].classList.remove("selected2")
+    buttonArray2[5].classList.remove("selected2")
+    document.querySelector('#cantidaddecuotas2').classList.remove("selected2")
+
+    if (i.value !== "Otra opción"){
+      i.classList.add("selected2");
+    }
+    if (i.value == "Otra opción") {
+      document.querySelector('#cantidaddecuotas2').classList.add("selected2")
+    } 
+    var x = document.getElementById('cantidaddecuotas2');
+    // Esta parte esconde el input de cantidad custom de cuotas cuando le das click a otra opción de cuotas
+    if (i.value !== "Otra opción" && x.style.display === "flex") {
+      x.style.display = "none";
+      x.value = null
+    } 
+  })
+});
 
 //Esta función es para mostrar el mostrar el campo para ingresar más opciones de cuotas. 
 
@@ -95,6 +117,14 @@ function showoptions3() {
     }
   }
 
+  function showoptions4() {
+    var x = document.getElementById('cantidaddecuotas2');
+    if (x.style.display === "flex") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "flex";
+      }
+    }  
 //Esta función es para mostrar las opciones avanzadas. Aún no funciona la posibilidad de cambiar el valor de la inflación.
 function showoptions2() {
   var x = document.getElementById('impuestosellos');
@@ -110,24 +140,58 @@ function showoptions2() {
 function myFunction(e) {
   g = document.createElement('div');
   g.setAttribute("id", "resultados");
-  document.querySelector(".cuotas__app").appendChild(g)
+  document.querySelector("body").appendChild(g)
   document.querySelector('#resultados').style.display = "flex"; 
-  if( document.querySelector('.selected').hasAttribute("data-test")){
+
+  // OPCIÓN 1
+  if( document.querySelector('.selected').hasAttribute("data-test") && document.querySelector('.selected').getAttribute("data-test") == 0 ){
+    // Este condicional es para que si toma opta por el botón en contado la cantidad de cuotas sea 1.
+    cantidaddecuotas = 1;
+  } else if( document.querySelector('.selected').hasAttribute("data-test")){
     cantidaddecuotas = parseFloat(document.querySelector('.selected').getAttribute("data-test")); 
-  } else {
+  }
+  else {
     cantidaddecuotas = parseFloat(document.querySelector('.selected').value); 
   } 
     const valordelacuota = document.getElementById('valordelacuota').value;
     const valordelacuota2 = valordelacuota.replace('$', '');
     const valordelacuota4 = valordelacuota2.replace(',', '');
-    document.getElementById('mensajederesultado').textContent =  "La suma de las cuotas es: "
-    document.getElementById('spanResult').textContent = formatter.format(parseFloat(valordelacuota4) * parseFloat(cantidaddecuotas)) ;
-    // event.preventDefault();
+    paymentsSumOp1=document.createElement('span')
+    paymentsSumOp1.setAttribute("id", "mensajederesultado3");
+    document.querySelector("#resultados").appendChild(paymentsSumOp1)
+    paymentsSumOp1.textContent =  "La suma de las cuotas de la primera opción es: "
+    paymentsSum$Op1=document.createElement('span')
+    paymentsSumOp1.appendChild(paymentsSum$Op1)
+    paymentsSum$Op1.textContent = formatter.format(parseFloat(valordelacuota4) * parseFloat(cantidaddecuotas)) ;
+
+
+  // OPCIÓN 2
+    if( document.querySelector('.selected2').hasAttribute("data-test2") && document.querySelector('.selected2').getAttribute("data-test2") == 0 ){
+      // Este condicional es para que si toma opta por el botón en contado la cantidad de cuotas sea 1.
+      cantidaddecuotasOp2 = 1;
+    } else if( document.querySelector('.selected2').hasAttribute("data-test2")){
+      cantidaddecuotasOp2 = parseFloat(document.querySelector('.selected2').getAttribute("data-test2")); 
+    }
+    else {
+      cantidaddecuotasOp2 = parseFloat(document.querySelector('.selected2').value); 
+    } 
+      const valordelacuotaOp2 = document.getElementById('valordelacuota2').value;
+      const valordelacuota2Op2 = valordelacuotaOp2.replace('$', '');
+      const valordelacuota4Op2 = valordelacuota2Op2.replace(',', '');
+
+      paymentsSumOp2=document.createElement('span')
+      paymentsSumOp2.setAttribute("id", "mensajederesultado2Opt2");
+      document.querySelector("#resultados").appendChild(paymentsSumOp2)
+      paymentsSumOp2.textContent =  "La suma de las cuotas de la segunda opción es: "
+      paymentsSum$Op2=document.createElement('span')
+      paymentsSumOp2.appendChild(paymentsSum$Op2)
+      paymentsSum$Op2.textContent = formatter.format(parseFloat(valordelacuota4Op2) * parseFloat(cantidaddecuotasOp2)) ;
     PV();
   }
 
 
   function PV() {
+    // OPCION 1    
     //Aquí se elije el valor de la cantidad de cuotas seleccionadas. si tiene el atributo data elige los botones si no el valor custom
     if( document.querySelector('.selected').hasAttribute("data-test")){
       cantidaddecuotas = parseFloat(document.querySelector('.selected').getAttribute("data-test")); 
@@ -138,21 +202,25 @@ function myFunction(e) {
     const valordelacuota2 = valordelacuota.replace('$', '');
     const valordelacuota4 = valordelacuota2.replace(',', '');
     anualInflation = document.querySelector('#inflacion__number').value
-    console.log("Inflacion anual:"+ anualInflation)
     // Cálculo de la tasa efectiva mensual a partir de la anual
     rate = (Math.pow((1+anualInflation/100),1/12)-1)*100 
-    console.log("Inflacion mensual:"+ rate)
     rate2 = parseFloat(rate) / 100.0;
     //const valoractual = valordelacuota4 / rate * (1 - Math.pow(1 + rate2, cantidaddecuotas));
     var valoractualresult2 = 0;
     const valoractualDeCadaCuota=[]
     const numeroDeCadaCuota = []
     // Acá se calcula el valor actual de la suma de las cuotas//
+    if(cantidaddecuotas!=0){
     for(var i = 0; i < cantidaddecuotas; i+=1){
       valoractualresult = valordelacuota4 / Math.pow(1+rate2,i+1);
-      valoractualresult2 = valoractualresult2 + valoractualresult ;
+      valoractualresult2 += valoractualresult ;
       valoractualDeCadaCuota.push(valoractualresult)
       numeroDeCadaCuota.push("Cuota Nº " + (i+1))
+    }} else{
+      valoractualresult = valordelacuota4
+      valoractualresult2 = valordelacuota4
+      valoractualDeCadaCuota.push(valoractualresult)
+      numeroDeCadaCuota.push("Cuota Nº 0")
     }
     const arr1 = numeroDeCadaCuota;
     const arr2 = valoractualDeCadaCuota;
@@ -163,24 +231,71 @@ function myFunction(e) {
     obj[element] = arr2[index];
 });
 
-    console.log(obj);
-    console.log(valoractualDeCadaCuota)
-    console.log(numeroDeCadaCuota )
-    document.getElementById('mensajederesultado2').textContent =  "El valor actual de las cuotas es: "
-    document.getElementById('spanResult2').textContent = formatter.format(valoractualresult2) ;
-    const precioencontado3 = document.getElementById('precioencontado').value;
-    const precioencontado2 = precioencontado3.replace('$', '');
-    const precioencontado = precioencontado2.replace(',', '');
-    if(precioencontado>valoractualresult2){
-      let ahorro = precioencontado - valoractualresult2;
-      document.getElementById('mensajederesultado3').textContent =  "Te conviene pagar en cuotas. Te estás ahorrando " + formatter.format(ahorro) + " producto de la inflación."
+actualValueResult=document.createElement('span')
+actualValueResult.setAttribute("id", "actualValueResult");
+document.querySelector("#resultados").appendChild(actualValueResult)
+actualValueResult.textContent =  "El valor actual de la opción 1 es: "
+actualValue$Result = document.createElement('span')
+actualValueResult.appendChild(actualValue$Result)
+actualValue$Result.textContent = formatter.format(valoractualresult2) ;
+
+
+    // OPCION 2
+    if( document.querySelector('.selected2').hasAttribute("data-test2")){
+      cantidaddecuotasOp2 = parseFloat(document.querySelector('.selected2').getAttribute("data-test2")); 
+    } else {
+      cantidaddecuotasOp2 = parseFloat(document.querySelector('.selected2').value); 
     }
-    if(precioencontado<valoractualresult2){
-      document.getElementById('mensajederesultado4').textContent =  "Te conviene en contado."
+    const valordelacuotaOp2 = document.getElementById('valordelacuota2').value;
+    const valordelacuota2Op2 = valordelacuota.replace('$', '');
+    const valordelacuota4Op2 = valordelacuota2.replace(',', '');
+
+    // Acá se calcula el valor actual de la suma de las cuotas//
+    var valoractualresult2op2 = 0;
+    const valoractualDeCadaCuotaop2=[]
+    const numeroDeCadaCuotaop2 = []
+
+
+    if(cantidaddecuotasOp2!=0){
+      for(var i = 0; i < cantidaddecuotasOp2; i+=1){
+        valoractualresultop2 = valordelacuota4Op2 / Math.pow(1+rate2,i+1);
+        valoractualresult2op2 += valoractualresultop2 ;
+        valoractualDeCadaCuotaop2.push(valoractualresult2op2)
+        numeroDeCadaCuotaop2.push("Cuota Nº " + (i+1))
+      }} else{
+        valoractualresultop2 = valordelacuota4Op2
+        valoractualresult2op2 = valordelacuota4Op2
+        valoractualDeCadaCuotaop2.push(valoractualresult2op2)
+        numeroDeCadaCuotaop2.push("Cuota Nº 0")
+      }
+    const arr1Op2 = numeroDeCadaCuotaop2;
+    const arr2Op2 = valoractualDeCadaCuotaop2;
+
+    const objOp2 = {};
+
+    arr1Op2.forEach((element, index) => {
+    objOp2[element] = arr1Op2[index];
+});
+
+
+    document.getElementById('mensajederesultado2Op2').textContent =  "El valor actual de la opción 2 es: "
+    document.getElementById('spanResult2Op2').textContent = formatter.format(valoractualresult2op2) ;  
+
+    firstResultMessage = document.createElement('span');
+    firstResultMessage.setAttribute("id", "mensajederesultado3");
+    document.getElementById('resultados').appendChild(firstResultMessage)
+
+
+    // CONDICIONALES
+    if(valoractualresult2op2>valoractualresult2){
+      firstResultMessage.textContent =  "Te conviene la primera opción de financiación: pagar tu compra en " + cantidaddecuotas + " cuotas de " + valordelacuota + " cada una."
+    }
+    if(valoractualresult2op2<valoractualresult2){
+      firstResultMessage.textContent =  "Te conviene la segunda opción de financiación: pagar tu compra en " + cantidaddecuotasOp2 + " cuotas de " + valordelacuotaOp2 + " cada una."
     }
     let myString = JSON.stringify(obj);
     document.getElementById('resultado__detalle').textContent =  "El cálculo asume que los ingresos mensuales aumentan a la par que la inflación. " + "La inflación estimada mensual para este cálculo es " + Math.round(parseFloat( rate) *100)/100 +"%.";
-    document.getElementById('title_grafica').textContent =  "Valor actual de cada cuota (Es el valor de cada cuota como si la pagaras hoy)"
+    document.getElementById('title_grafica').textContent =  "Valor actual de cada cuota de la primera opción (Es el valor de cada cuota como si la pagaras hoy)"
 
     // Obtener una referencia al elemento canvas del DOM
 const $grafica = document.querySelector("#grafica");
@@ -214,20 +329,12 @@ new Chart($grafica, {
     }
 });
   
-  
   }
 
 
 cantidaddecuotas = document.getElementById('cantidaddecuotas').value;
 cantidaddecuotas.replace('$', '');
 
-
-var rate3 = document.getElementById("inflacion__number"); // Esta variable es para obtener el valor de la inflación (Aún no se está usando)//
-
-//Esta variable es para extraer el valor de la inflación anual del campo de funciones avanzadas y dividirla por doce (Aún no se está usando)//
-function formula(){
-  return rate = rate3.value/12;
-}
 
 
 

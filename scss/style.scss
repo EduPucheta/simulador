@@ -31,10 +31,14 @@ html {
       font-size:x-large;
     }
     h2{
-      font-size: medium;
+      font-size: large;
       margin-bottom: 10px;
+      margin-bottom: 15px;
+      text-align: center;
+      font-weight:bolder;
     }    
     .modal-content{
+      max-width: 600px;
       .modal-content__title{
         font-size: large;
       }
@@ -70,6 +74,7 @@ html {
 
     .cuotas__app {
       margin-top: 20px;
+      margin-bottom: 40px;
       margin-left: 5%;
       margin-right: 5%;
       background-color: #F1F1FA;
@@ -86,7 +91,6 @@ html {
         padding: 5%;
         border-radius: 7px;
         box-shadow: 10px 10px 5px rgb(87, 87, 87);
-
       }
       .main__text{
         display: flex;
@@ -145,7 +149,12 @@ html {
             }
           }
 
+          
           .selected{
+            background-color: $color-fondo;
+            color: white;
+          }
+          .selected2{
             background-color: $color-fondo;
             color: white;
           }
@@ -162,12 +171,13 @@ html {
             color: black;
             transition-duration: 0.3s;
             
-          }
-
-
-          
+          }          
         }
         #cantidaddecuotas{
+          display: none;
+          transition-duration: 0.3s;
+        }
+        #cantidaddecuotas2{
           display: none;
           transition-duration: 0.3s;
         }
@@ -313,23 +323,41 @@ input:checked + .slider:before {
           }
         }
       }
-
-      #resultados {
-        display: none;
-        flex-direction: column;
-        margin-top: 10px;
-
-        #mensajederesultado3 {
-          color: green;
-        }
-
-        #mensajederesultado4 {
-          color: red;
-        }
-        #resultado__detalle{
-          font-size: small;
-        }
-      }
     }
   }
 }
+
+#resultados{
+  display: flex;
+  flex-direction: column;
+}
+
+#resultados > * {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #F1F1FA;
+  padding: 5%;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+  @media (min-width:1025px) {
+    /* big landscape tablets, laptops, and desktops */
+    max-width: 1000px;
+    margin-top: 50px;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: #F1F1FA;
+    padding: 5%;
+    border-radius: 7px;
+    box-shadow: 10px 10px 5px rgb(87, 87, 87);
+
+  #mensajederesultado4 {
+    color: red;
+  }
+  #resultado__detalle{
+    font-size: small;
+  }
+}
+}  
