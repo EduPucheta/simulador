@@ -1,89 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mangos</title>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MD3JLDZ');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MD3JLDZ');</script>
     <!-- End Google Tag Manager -->
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="main.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
     <link rel="icon" type="image/x-icon" href=".\assets\logo-removebg-preview.png">
 </head>
+
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD3JLDZ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD3JLDZ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!-- Just an image -->
     <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-      <img src=".\assets\mangos-logo.png" width="250px" height="60px" alt="">
-    </a>
+        <a class="navbar-brand" href="#">
+            <img src=".\assets\mangos-logo.png" alt="">
+        </a>
+        <button id="myBtn">Como funciona</button>
     </nav>
     <!-- The Modal -->
     <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p class="modal-content__title">Bienvenido a Mangos! </p>
-        <p>Elegi entre dos opciones de financiación y descubrí como te conviene pagar tu compra teniendo en cuenta la inflación.</p>
-        <button class="modal-content__start__button">Empezar!</button>
-    </div>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="modal-content__title">Bienvenido a Mangos! </p>
+            <p>Elegi entre dos opciones de financiación y descubrí como te conviene pagar tu compra teniendo en cuenta
+                la inflación.</p>
+            <p>Para cada opción elegí en cuantas cuotas podés pagar y el valor de cada cuota. También podés elegir como
+                opción pagar en contado eligiendo la forma de pago "Contado" e ingresando el valor total de la compra.</p>
+            <button class="modal-content__start__button">Empezar!</button>
+        </div>
     </div>
     <div class="cuotas__app">
         <div class="main__text">
-            <h1>Te ayudamos a hacer que tus mangos rindan más 🚀 <button id="myBtn"></button></h1> 
+            <h1>Te ayudamos a hacer que tus mangos rindan más 🚀</h1>
         </div>
         <form method="get" id="form1" class="._bg__input" autocomplete="off">
             <h2>Primera opción</h2>
             <label for="cantidaddecuotas">Forma de pago
                 <div class="chips__cuotas">
-                    <input type="button" class="cuotas" value="Contado"  data-test="0">
-                    <input type="button" class="cuotas" value="1 cuota"  data-test="1">
+                    <input type="button" class="cuotas" value="Contado" data-test="0">
+                    <input type="button" class="cuotas" value="1 cuota" data-test="1">
                     <input type="button" class="cuotas" value="3 cuotas" data-test="3">
                     <input type="button" class="cuotas" value="6 cuotas" data-test="6">
                     <input type="button" class="cuotas" value="12 cuotas" data-test="12">
                     <input type="button" class="cuotas" value="Otra opción" onclick="showoptions3()">
                 </div>
-                <input type="number" id="cantidaddecuotas" class="input label" name="cantidaddecuotas"  placeholder="Ejemplo: 9 cuotas" min="1" max="10000"></label>
+                <input type="number" id="cantidaddecuotas" class="input label" name="cantidaddecuotas"
+                    placeholder="Ejemplo: 9 cuotas" min="1" max="10000">
+            </label>
             <label for="valordelacuota">Valor de cada cuota o precio contado
-                <input type="text" id="valordelacuota" class="input label" name="valordelacuota"  data-type="currency" placeholder="Ejemplo: $2,000"></label>
-                <h2>Segunda opción</h2>
-                <label for="cantidaddecuotas2">Forma de pago
-                    <div class="chips__cuotas" id="chip__cuotas2">
-                        <input type="button" class="cuotas2" value="Contado" data-test2="0">
-                        <input type="button" class="cuotas2" value="1 cuota" data-test2="1">
-                        <input type="button" class="cuotas2" value="3 cuotas" data-test2="3">
-                        <input type="button" class="cuotas2" value="6 cuotas" data-test2="6">
-                        <input type="button" class="cuotas2" value="12 cuotas" data-test2="12">
-                        <input type="button" class="cuotas2" value="Otra opción" onclick="showoptions4()">
-                    </div>
-                    <input type="number" id="cantidaddecuotas2" class="input label" name="cantidaddecuotas"  placeholder="Ejemplo: 9 cuotas" min="1" max="10000"></label>
-                
-                    <label for="valordelacuota2">Valor de cada cuota o precio contado
-                        <input type="text" id="valordelacuota2" class="input label" name="valordelacuota2"  data-type="currency" placeholder="Ejemplo: $2,000"></label>
-                    <div class="advaced_options__withoptions">
+                <input type="text" id="valordelacuota" class="input label" name="valordelacuota" data-type="currency"
+                    placeholder="Ejemplo: $2,000"></label>
+            <h2>Segunda opción</h2>
+            <label for="cantidaddecuotas2">Forma de pago
+                <div class="chips__cuotas" id="chip__cuotas2">
+                    <input type="button" class="cuotas2" value="Contado" data-test2="0">
+                    <input type="button" class="cuotas2" value="1 cuota" data-test2="1">
+                    <input type="button" class="cuotas2" value="3 cuotas" data-test2="3">
+                    <input type="button" class="cuotas2" value="6 cuotas" data-test2="6">
+                    <input type="button" class="cuotas2" value="12 cuotas" data-test2="12">
+                    <input type="button" class="cuotas2" value="Otra opción" onclick="showoptions4()">
+                </div>
+                <input type="number" id="cantidaddecuotas2" class="input label" name="cantidaddecuotas"
+                    placeholder="Ejemplo: 9 cuotas" min="1" max="10000">
+            </label>
+
+            <label for="valordelacuota2">Valor de cada cuota o precio contado
+                <input type="text" id="valordelacuota2" class="input label" name="valordelacuota2" data-type="currency"
+                    placeholder="Ejemplo: $2,000"></label>
+            <div class="advaced_options__withoptions">
                 <div class="advaced_options" onclick="showoptions2()">
                     <img src="assets/images/arrow-square-down.png" alt="">
                     <p>Más opciones</p>
-                    </div>
-                <div id="impuestosellos" >
-                    <label for="inflacion">Modificá el valor de la inflación anual. Por defecto tomamos el índice del último mes de INDEC (Septiembre 2022: 6.2%) y la proyectamos a 12 meses.
-                        <input form="form1" type="number" id="inflacion__number" class="input label" name="inflacion"  value="105.8" min="0" max="10000" step="0.01" ></label>  
                 </div>
-            <button type="button" form="form1"  id="submitbutton" value="Submit" onclick="myFunction()">Calcular</button>
+                <div id="impuestosellos">
+                    <label for="inflacion">Modificá el valor de la inflación anual. Por defecto tomamos el índice del
+                        último mes de INDEC (Septiembre 2022: 6.2%) y la proyectamos a 12 meses.
+                        <input form="form1" type="number" id="inflacion__number" class="input label" name="inflacion"
+                            value="105.8" min="0" max="10000" step="0.01"></label>
+                </div>
+                <button type="button" form="form1" id="submitbutton" value="Submit"
+                    onclick="myFunction()">Calcular</button>
         </form>
     </div>
     <div id="resultados2">
@@ -91,18 +110,20 @@
             <span id="spanResult" data-type="currency"></span>
         </div>
         <div>
-        <span id="mensajederesultado2"></span>
-        <span id="spanResult2"  data-type="currency"></span>
-        <br>
-        <span id="mensajederesultado2Op2"></span>
-        <span id="spanResult2Op2"  data-type="currency"></span>
+            <span id="mensajederesultado2"></span>
+            <span id="spanResult2" data-type="currency"></span>
+            <br>
+            <span id="mensajederesultado2Op2"></span>
+            <span id="spanResult2Op2" data-type="currency"></span>
         </div>
         <span id="mensajederesultado4"></span><br>
-        <span id="title_grafica"></span>
         <canvas id="grafica"></canvas>
         <span id="resultado__detalle"></span><br>
     </div>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

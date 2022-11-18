@@ -156,13 +156,20 @@ function myFunction(e) {
     const valordelacuota = document.getElementById('valordelacuota').value;
     const valordelacuota2 = valordelacuota.replace('$', '');
     const valordelacuota4 = valordelacuota2.replace(',', '');
+    // Crea card de resultado de suma de cuotas en contado.
+    paymentsSumResults=document.createElement('span')
+    paymentsSumResults.setAttribute("id", "paymentsSumResults");
+    document.querySelector("#resultados").appendChild(paymentsSumResults)
+
+
     paymentsSumOp1=document.createElement('span')
     paymentsSumOp1.setAttribute("id", "mensajederesultado3");
-    document.querySelector("#resultados").appendChild(paymentsSumOp1)
+    paymentsSumResults.appendChild(paymentsSumOp1)
+    paymentsSumResults.appendChild(document.createElement('br'))
     paymentsSumOp1.textContent =  "La suma de las cuotas de la primera opción es: "
     paymentsSum$Op1=document.createElement('span')
     paymentsSumOp1.appendChild(paymentsSum$Op1)
-    paymentsSum$Op1.textContent = formatter.format(parseFloat(valordelacuota4) * parseFloat(cantidaddecuotas)) ;
+    paymentsSum$Op1.textContent = formatter.format(parseFloat(valordelacuota4) * parseFloat(cantidaddecuotas)) +".";
 
 
   // OPCIÓN 2
@@ -181,11 +188,11 @@ function myFunction(e) {
 
       paymentsSumOp2=document.createElement('span')
       paymentsSumOp2.setAttribute("id", "mensajederesultado2Opt2");
-      document.querySelector("#resultados").appendChild(paymentsSumOp2)
+      paymentsSumResults.appendChild(paymentsSumOp2)
       paymentsSumOp2.textContent =  "La suma de las cuotas de la segunda opción es: "
       paymentsSum$Op2=document.createElement('span')
       paymentsSumOp2.appendChild(paymentsSum$Op2)
-      paymentsSum$Op2.textContent = formatter.format(parseFloat(valordelacuota4Op2) * parseFloat(cantidaddecuotasOp2)) ;
+      paymentsSum$Op2.textContent = formatter.format(parseFloat(valordelacuota4Op2) * parseFloat(cantidaddecuotasOp2))  +"." ;
     PV();
   }
 
@@ -231,13 +238,21 @@ function myFunction(e) {
     obj[element] = arr2[index];
 });
 
+
+// Crea card de descripción de valores actuales.
+actualValuesResults=document.createElement('span')
+actualValuesResults.setAttribute("id", "actualValuesResults");
+document.querySelector("#resultados").appendChild(actualValuesResults)
+
+
 actualValueResult=document.createElement('span')
 actualValueResult.setAttribute("id", "actualValueResult");
-document.querySelector("#resultados").appendChild(actualValueResult)
+actualValuesResults.appendChild(actualValueResult)
 actualValueResult.textContent =  "El valor actual de la opción 1 es: "
 actualValue$Result = document.createElement('span')
 actualValueResult.appendChild(actualValue$Result)
-actualValue$Result.textContent = formatter.format(valoractualresult2) ;
+actualValue$Result.textContent = formatter.format(valoractualresult2) + ". " 
+actualValuesResults.appendChild(document.createElement('br'));
 
 
     // OPCION 2
@@ -278,12 +293,20 @@ actualValue$Result.textContent = formatter.format(valoractualresult2) ;
 });
 
 
-    document.getElementById('mensajederesultado2Op2').textContent =  "El valor actual de la opción 2 es: "
-    document.getElementById('spanResult2Op2').textContent = formatter.format(valoractualresult2op2) ;  
+
+actualValueResultOp2=document.createElement('span')
+actualValueResultOp2.setAttribute("id", "actualValueResultOp2");
+actualValuesResults.appendChild(actualValueResultOp2)
+actualValueResultOp2.textContent =  "El valor actual de la opción 2 es: "
+actualValue$ResultOp2 = document.createElement('span')
+actualValueResultOp2.appendChild(actualValue$ResultOp2)
+actualValue$ResultOp2.textContent = formatter.format(valoractualresult2op2) +'.';
+
 
     firstResultMessage = document.createElement('span');
     firstResultMessage.setAttribute("id", "mensajederesultado3");
     document.getElementById('resultados').appendChild(firstResultMessage)
+    //document.getElementById('resultado').insertBefore(paymentsSumResults)
 
 
     // CONDICIONALES
@@ -295,10 +318,24 @@ actualValue$Result.textContent = formatter.format(valoractualresult2) ;
     }
     let myString = JSON.stringify(obj);
     document.getElementById('resultado__detalle').textContent =  "El cálculo asume que los ingresos mensuales aumentan a la par que la inflación. " + "La inflación estimada mensual para este cálculo es " + Math.round(parseFloat( rate) *100)/100 +"%.";
-    document.getElementById('title_grafica').textContent =  "Valor actual de cada cuota de la primera opción (Es el valor de cada cuota como si la pagaras hoy)"
 
     // Obtener una referencia al elemento canvas del DOM
-const $grafica = document.querySelector("#grafica");
+
+chartCard=document.createElement('span')
+chartCard.setAttribute('id','chartCard')
+document.querySelector('#resultados').appendChild(chartCard) 
+
+titleChart=document.createElement('span')
+titleChart.setAttribute("id","title_grafica")
+document.querySelector("#chartCard").appendChild(titleChart)
+titleChart.textContent="Valor actual de cada cuota de la primera opción (Es el valor de cada cuota como si la pagaras hoy)"
+
+chart=document.createElement('canvas')
+chart.setAttribute("id", "grafica");
+document.querySelector("#chartCard").appendChild(chart)
+
+
+const $grafica = chart;
 // Las etiquetas son las que van en el eje X. 
 const etiquetas = arr1
 // Podemos tener varios conjuntos de datos. Comencemos con uno

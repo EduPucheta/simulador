@@ -107,6 +107,37 @@ html body nav {
   height: 85px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+html body nav img {
+  width: 210px;
+  height: 50px;
+}
+@media (min-width: 1025px) {
+  html body nav img {
+    margin-left: 200px;
+  }
+}
+html body nav #myBtn {
+  background: #F1F1FA;
+  border: none;
+  padding: 5px;
+  float: right;
+  height: 30px;
+  margin-top: 25px;
+  margin-right: 250px;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 1025px) {
+  html body nav #myBtn {
+    margin-right: 15px;
+    max-width: 90px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    height: 50px;
+    margin-top: 15px;
+  }
+}
 html body h1 {
   font-size: x-large;
 }
@@ -150,7 +181,6 @@ html body .modal-content .modal-content__start__button:hover {
   color: white;
 }
 html body .cuotas__app {
-  margin-top: 20px;
   margin-bottom: 40px;
   margin-left: 5%;
   margin-right: 5%;
@@ -175,23 +205,6 @@ html body .cuotas__app {
 html body .cuotas__app .main__text {
   display: flex;
   justify-content: right;
-  margin-bottom: 10px;
-}
-html body .cuotas__app .main__text #myBtn2 {
-  color: white;
-  height: 40px;
-  width: 200px;
-  text-align: center;
-  border: none;
-  background: #003366;
-  margin-bottom: auto;
-  border-radius: 7px;
-}
-html body .cuotas__app #myBtn {
-  background: url("../assets/images/help-icon.png") no-repeat;
-  width: 24px;
-  height: 24px;
-  border: none;
 }
 html body .cuotas__app form {
   display: flex;
@@ -384,15 +397,23 @@ html body .cuotas__app form button:disabled {
   border-radius: 10px;
 }
 
+#resultados2 {
+  display: none;
+  flex-direction: column;
+}
+
 #resultados {
   display: flex;
   flex-direction: column;
 }
+#resultados #mensajederesultado3 {
+  order: -1;
+}
 
 #resultados > * {
   font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   margin-left: 5%;
   margin-right: 5%;
   background-color: #F1F1FA;
