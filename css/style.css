@@ -300,13 +300,13 @@ html body .cuotas__app form .advaced_options__withoptions .advaced_options p {
   margin-top: auto;
   margin-bottom: auto;
 }
-html body .cuotas__app form #impuestosellos {
+html body .cuotas__app form #advanced__options {
   display: none;
   flex-direction: row;
   justify-items: baseline;
   margin-bottom: 5px;
 }
-html body .cuotas__app form #impuestosellos #detalle {
+html body .cuotas__app form #advanced__options #detalle {
   font-size: small;
   margin-left: 5px;
 }
