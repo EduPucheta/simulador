@@ -1,0 +1,1 @@
+El proyecto incorporar la libreríass de Bootstrap exclusivamente para el Navbar, y la librería de JQuery para poder formatear el input numéricos en $.
