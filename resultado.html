@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mangos</title>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MD3JLDZ');</script>
+    <!-- End Google Tag Manager -->
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="main.js" defer></script>
+    <script src="result.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+    <link rel="icon" type="image/x-icon" href=".\assets\logo-removebg-preview.png">
+</head>
+
+<body>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="modal-content__title">Bienvenido a Mangos! </p>
+                <p>Compará entre dos opciones de financiación y descubrí como te conviene pagar tu compra teniendo en cuenta la inflación y la forma de pago que elijas.</p>
+                <p>Para cada opción elegí en cuantas cuotas podés pagar y el valor de cada cuota. </p>
+                <p>A demás del plan en cuotas  podés elegir como opción pagar en contado eligiendo la forma de pago "Contado" e ingresando el valor total de la compra.</p>
+                <p>La mejor opción de financiación será la que genere el menor valor actual.</p>
+                <a class="modal-content__start__button" href="/">Empezar!</a>
+            </div>
+        </div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD3JLDZ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Just an image -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img src=".\assets\mangos-logo.png" alt="">
+        </a>
+        <button id="myBtn">Como funciona</button>
+    </nav>
+    <div class="results__page">
+        <span><div id="table"></div></span>
+        <button class="startover">
+            <a href="/" >Volver a comparar</a>
+        </button>
+    </div>
+</body>
+
+</html>

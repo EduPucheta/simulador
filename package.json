@@ -11,5 +11,5 @@
     "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "El proyecto incorporar la librerías de Bootstrap exclusivamente para el Navbar, y la librería de JQuery para poder formatear el input numéricos en $.\r No encontré otra forma de formatear en $ que no sea utilizando la librería de JQuery."
 }

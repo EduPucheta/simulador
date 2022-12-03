@@ -2,3 +2,57 @@ $color-fondo: #003366;
 $color-chips:  #fce8b8; 
 $button-hovers: #372AA3;
 $color-fondo-mobile: #F1F1FA;
+
+$transition-speed: 0.3s;
+$color-mango: (255, 200, 0);
+// Desing System
+
+$uxg-spacing-0: 0;
+$uxg-spacing-1: 4px;
+$uxg-spacing-2: 8px;
+$uxg-spacing-3: 16px;
+$uxg-spacing-4: 24px;
+$uxg-spacing-5: 48px;
+$uxg-spacing-6: 96px;
+
+$box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.11), 0px 3px 14px rgba(0, 0, 0, 0.09), 0px 5px 5px rgba(0, 0, 0, 0.16);
+$font-family: 'Inter', sans-serif;
+$color-background-1: #F5F4F8;
+
+
+$color-dark-primary-0: #4A3B99;
+
+$color-primary-0: #694ED6;
+$color-primary-1: #F04E98;
+$color-primary-2: #414141;
+$color-primary-3: #C7C8CA;
+
+$color-secondary-1: rgba(0, 156, 189, 1);
+$color-secondary-1-04: rgba($color-secondary-1, 0.04);
+$color-secondary-1-16: rgba($color-secondary-1, 0.16);
+
+$color-secondary-2: rgba(237, 139, 0, 1);
+$color-secondary-2-04: rgba($color-secondary-2, 0.04);
+$color-secondary-2-16: rgba($color-secondary-2, 0.16);
+
+
+$color-font: rgba(0, 0, 0, 0.75);
+$color-font2: #C7C8CA;
+
+
+$color-button-chip-op1-border: rgba(0, 156, 189, 1); 
+$color-button-chip-op1: rgba(0, 156, 189, 0.04);
+$color-button-chip-op1-selected: rgba(0, 156, 189, 0.16);
+
+$color-button-chip-op2-border: rgba(237, 139, 0, 1); 
+$color-button-chip-op2: rgba(237, 139, 0, 0.04);
+$color-button-chip-op2-selected:  rgba(237, 139, 0, 0.16);
+ 
+
+$color-button-unselected: #FFFFFF;
+$color-fields-background: rgba(105, 78, 214, 0.08);
+
+
+
+
+
