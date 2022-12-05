@@ -134,25 +134,17 @@ html body .description {
   }
 }
 html body h2 {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   font-weight: 900;
   font-size: 18px;
   text-align: center;
-  color: rgba(0, 0, 0, 0.75);
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
-  text-shadow: 1.5px 1.5px #F5F4F8, 1.5px -1.5px #F5F4F8, -1.5px 1.5px #F5F4F8, -1.5px -1.5px #F5F4F8;
-  text-decoration-thickness: 4px;
-  line-height: 0.85;
 }
 html body .cuotas__app__option1__title {
-  -webkit-text-decoration-color: rgb(0, 156, 189);
-          text-decoration-color: rgb(0, 156, 189);
+  color: rgb(0, 156, 189);
 }
 html body .cuotas__app__option2__title {
-  -webkit-text-decoration-color: rgb(237, 139, 0);
-          text-decoration-color: rgb(237, 139, 0);
+  color: rgb(237, 139, 0);
 }
 html body .modal-content {
   max-width: 600px;
@@ -266,6 +258,8 @@ html body .cuotas__app form .input:invalid {
   flex-grow: 0;
 }
 html body .cuotas__app form #chip__cuotas1 {
+  margin-top: 16px;
+  margin-bottom: 16px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -307,6 +301,10 @@ html body .cuotas__app form #chip__cuotas1 button {
   transition-duration: 0.3s;
 }
 html body .cuotas__app form #chip__cuotas2 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -448,7 +446,8 @@ html body .cuotas__app form #submitbutton:disabled {
 }
 
 #resultados > * {
-  font-weight: bold;
+  font-weight: 500;
+  font-size: small;
   margin-top: 8px;
   margin-bottom: 8px;
   margin-left: 5%;
@@ -485,7 +484,14 @@ html body .cuotas__app form #submitbutton:disabled {
 .results__page #table th, .results__page #table td {
   padding: 5px;
 }
-.results__page .startover {
+.results__page #table tr th:nth-of-type(2) {
+  color: rgb(0, 156, 189);
+}
+.results__page #table tr th:nth-of-type(3) {
+  color: rgb(237, 139, 0);
+}
+
+.startover {
   margin-top: 8px;
   margin-bottom: 8px;
   margin-right: auto;
@@ -503,11 +509,11 @@ html body .cuotas__app form #submitbutton:disabled {
   font-weight: 700;
   transition: 0.3s;
 }
-.results__page .startover:hover {
+.startover:hover {
   background-color: #F04E98;
   color: white;
 }
-.results__page .startover a {
+.startover a {
   text-decoration: none;
   color: white;
 }/*# sourceMappingURL=style.css.map */

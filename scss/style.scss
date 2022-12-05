@@ -88,29 +88,18 @@ html {
       }
     }
     h2 {
-      margin-top: $uxg-spacing-2 ;
-      margin-bottom: $uxg-spacing-2;
+      margin-top: $uxg-spacing-3 ;
+      margin-bottom: $uxg-spacing-3;
       font-weight: 900;
       font-size: 18px; 
       text-align: center;
-      color: $color-font;
-      text-decoration-line: underline ;
-      text-shadow:
-      1.5px 1.5px $color-background-1,
-      1.5px -1.5px $color-background-1,
-      -1.5px 1.5px $color-background-1,
-      -1.5px -1.5px $color-background-1 ;
-      text-decoration-thickness: 4px;
-      line-height: 0.85;
-      //line-height: 24px;
-      //text-align: center; 
     }
     .cuotas__app__option1__title{
-      text-decoration-color: $color-secondary-1;
+      color: $color-secondary-1;
     }
     .cuotas__app__option2__title{ 
 
-      text-decoration-color: $color-secondary-2;
+      color: $color-secondary-2;
     }
     .modal-content {
       max-width: 600px;
@@ -224,6 +213,8 @@ html {
         }
           }
         #chip__cuotas1 {
+          margin-top: $uxg-spacing-3;
+          margin-bottom: $uxg-spacing-3;
           display: flex;
           flex-wrap: wrap;
           input {
@@ -267,6 +258,10 @@ html {
           }
         }
         #chip__cuotas2 {
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: $uxg-spacing-3;
+          margin-bottom: $uxg-spacing-3;
           display: flex;
           flex-wrap: wrap;
           input {
@@ -428,7 +423,8 @@ html {
 }
 
 #resultados > * {
-  font-weight: bold;
+  font-weight: 500;
+  font-size: small;
   margin-top: $uxg-spacing-2;
   margin-bottom: $uxg-spacing-2;
   margin-left: 5%;
@@ -463,7 +459,14 @@ html {
     margin-top: $uxg-spacing-2;
     th, td {
       padding: 5px;
-  }
+    }
+    tr th:nth-of-type(2){
+      color: $color-secondary-1;
+    }
+    tr th:nth-of-type(3){
+      color: $color-secondary-2; 
+    }
+}
 }
 
 
@@ -492,5 +495,4 @@ html {
     text-decoration: none;
     color: white;
   }
-}
 }

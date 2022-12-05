@@ -1,18 +1,19 @@
 // Fecth inflación desde JSON
 let url = "datos.json" 
 
-const address = fetch(url)
+const fetchJson = fetch(url)
   .then((response) => response.json())
   .then((response) => {
-    return response.inflacionAnual;
-  });
+    return response.inflacionAnual;})
+  .catch ((error) => {console.log("error fetch")})  
+  ;
 
-const printAddress = async () => {
-  let rate = await address  ;
+const updateInflationFetch = async () => {
+  let rate = await fetchJson  ;
   document.querySelector("#inflacion__number").value = rate
 }; 
 
-printAddress();
+updateInflationFetch();
 
 
 // MODAL DE BIENVENIDA EN PRIMERA SESIÓN

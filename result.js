@@ -100,8 +100,6 @@ const searchParams = new URL(url).searchParams;
 const urlSearchParams = new URLSearchParams(searchParams);
 
 const res = Array.from(urlSearchParams.entries());
-console.log(res);
-
 
 cantidaddecuotas=urlSearchParams.get('cuotasOp1'); 
 valordelacuota4=urlSearchParams.get('valOp1'); 
@@ -149,20 +147,13 @@ anualInflation=urlSearchParams.get('inf');
     const arr2 = valoractualDeCadaCuota;
   
     const obj = {};
-    // Aca creo un objeto pero no se esta usando en ningun lado aun.
     arr1.forEach((element, index) => {
       obj[element] = arr2[index];
     });
   
-    // Crea card de descripción de valores actuales.
-
     actualValue$Resulttxt = formatter.format(valoractualresult2) + ". ";
     
-  
     // OPCION 2
-
-  
-    // Acá se calcula el valor actual de la suma de las cuotas//
     let valoractualresult2op2 = 0;
     const valoractualDeCadaCuotaop2 = [];
     const numeroDeCadaCuotaop2 = [];
@@ -171,7 +162,7 @@ anualInflation=urlSearchParams.get('inf');
       for (let i = 0; i < cantidaddecuotasOp2; i += 1) {
         valoractualresultop2 = valordelacuota4Op2 / Math.pow(1 + rate2, i + 1);
         valoractualresult2op2 += valoractualresultop2;
-        valoractualDeCadaCuotaop2.push(valoractualresult2op2);
+        valoractualDeCadaCuotaop2.push(valoractualresultop2);
         numeroDeCadaCuotaop2.push("Cuota Nº " + (i + 1));
       }
     } else {
@@ -189,6 +180,8 @@ anualInflation=urlSearchParams.get('inf');
       objOp2[element] = arr1Op2[index];
     });
   
+    console.log(arr2)  
+    console.log(valoractualDeCadaCuotaop2)   
 
     actualValue$ResultOp2txt =
     formatter.format(valoractualresult2op2)
@@ -214,7 +207,6 @@ anualInflation=urlSearchParams.get('inf');
         formatter.format(valordelacuota4Op2) +
         " cada una.";
     }
-    let myString = JSON.stringify(obj);
   
     // CHART 1
   
@@ -329,8 +321,10 @@ anualInflation=urlSearchParams.get('inf');
     
     let employees = [
         {cant: 'Cantidad de cuotas', Cantidaddecuotas: cantidaddecuotas, Cantidaddecuot: cantidaddecuotasOp2 },
+        {cant: 'Valor de cada cuota', Val1:valordelacuota4, val1: valordelacuota4Op2 },
+        {val: "Suma total de las cuotas", sum1: paymentsSum$Op1txt, sum2: paymentsSum$Op2txt},
         {val: "Valor actual de las cuotas", val1: actualValue$Resulttxt, val2: actualValue$ResultOp2txt },
-        {val: "Suma total de las cuotas", sum1: paymentsSum$Op1txt, sum2: paymentsSum$Op2txt}
+       
     ]
     
     let headers = ['','Opción 1', 'Opción 2'];
