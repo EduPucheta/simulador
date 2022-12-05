@@ -1,3 +1,97 @@
+//Estas funciones las obtuve de Stackoverflow y sirven para aplicar el formato de $$ en los inputs del form
+
+// Jquery Dependency
+$("input[data-type='currency']").on({
+  keyup: function () {
+    formatCurrency($(this));
+  },
+  blur: function () {
+    formatCurrency($(this), "blur");
+  },
+});
+
+function formatNumber(n) {
+  // format number 1000000 to 1,234,567
+  return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function formatCurrency(input, blur) {
+  // appends $ to value, validates decimal side
+  // and puts cursor back in right position.
+
+  // get input value
+  let input_val = input.val();
+
+  // don't validate empty input
+  if (input_val === "") {
+    return;
+  }
+
+  // original length
+  let original_len = input_val.length;
+
+  // initial caret position
+  let caret_pos = input.prop("selectionStart");
+
+  // check for decimal
+  if (input_val.indexOf(".") >= 0) {
+    // get position of first decimal
+    // this prevents multiple decimals from
+    // being entered
+    let decimal_pos = input_val.indexOf(".");
+
+    // split number by decimal point
+    let left_side = input_val.substring(0, decimal_pos);
+    let right_side = input_val.substring(decimal_pos);
+
+    // add commas to left side of number
+    left_side = formatNumber(left_side);
+
+    // validate right side
+    right_side = formatNumber(right_side);
+
+    // On blur make sure 2 numbers after decimal
+    if (blur === "blur") {
+      right_side += "00";
+    }
+
+    // Limit decimal to only 2 digits
+    right_side = right_side.substring(0, 2);
+
+    // join number by .
+    input_val = "$" + left_side + "." + right_side;
+  } else {
+    // no decimal entered
+    // add commas to number
+    // remove all non-digits
+    input_val = formatNumber(input_val);
+    input_val = "$" + input_val;
+  }
+
+  // send updated string to input
+  input.val(input_val);
+
+  // put caret back in the right position
+  let updated_len = input_val.length;
+  caret_pos = updated_len - original_len + caret_pos;
+  input[0].setSelectionRange(caret_pos, caret_pos);
+}
+
+//
+
+// Create our number formatter.
+let formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+
+  // These options are needed to round to whole numbers if that's what you want.
+  //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+  //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+});
+
+
+////
+
 const url = window.location.href; // Gets current URL
 
 const searchParams = new URL(url).searchParams; 
@@ -15,64 +109,21 @@ cantidaddecuotasOp2=urlSearchParams.get('cuotasOp2');
 valordelacuota4Op2=urlSearchParams.get('valOp2'); 
 anualInflation=urlSearchParams.get('inf'); 
 
-console.log(
-    //cantidaddecuotas, valordelacuota, cantidaddecuotasOp2,valordelacuotaOp2
-)
 
+////
 
-function myFunction2(e) {
+  function myFunction2(e) {
     g = document.createElement("div");
     g.setAttribute("id", "resultados");
     document.querySelector(".results__page").prepend(g);
-    //document.querySelector("body").appendChild(g);
     document.querySelector("#resultados").style.display = "flex";
-  
-    // OPCIÓN 1
-
-    // Crea card de resultado de suma de cuotas en contado.
-    paymentsSumResults = document.createElement("span");
-    paymentsSumResults.setAttribute("id", "paymentsSumResults");
-    document.querySelector("#resultados").appendChild(paymentsSumResults);
-  
-    paymentsSumOp1 = document.createElement("span");
-    paymentsSumOp1.setAttribute("id", "mensajederesultado3");
-    paymentsSumResults.appendChild(paymentsSumOp1);
-    paymentsSumResults.appendChild(document.createElement("br"));
-    paymentsSumOp1.textContent =
-      "La suma de las cuotas de la primera opción es: ";
-    paymentsSum$Op1 = document.createElement("span");
-    paymentsSumOp1.appendChild(paymentsSum$Op1);
-    paymentsSum$Op1.textContent =
-      formatter.format(
-        parseFloat(valordelacuota4) * parseFloat(cantidaddecuotas)
-      ) + ".";
       paymentsSum$Op1txt=
       formatter.format(
         parseFloat(valordelacuota4) * parseFloat(cantidaddecuotas)
       ) ;
-  
-  
-    paymentsSumOp2 = document.createElement("span");
-    paymentsSumOp2.setAttribute("id", "mensajederesultado2Opt2");
-    paymentsSumResults.appendChild(paymentsSumOp2);
-    paymentsSumOp2.textContent =
-      "La suma de las cuotas de la segunda opción es: ";
-    paymentsSum$Op2 = document.createElement("span");
-    paymentsSumOp2.appendChild(paymentsSum$Op2);
-    paymentsSum$Op2.textContent =
-      formatter.format(
-        parseFloat(valordelacuota4Op2) * parseFloat(cantidaddecuotasOp2)
-      ) + ".";
       paymentsSum$Op2txt= formatter.format(
         parseFloat(valordelacuota4Op2) * parseFloat(cantidaddecuotasOp2)
       );
-    PV2();
-  }
-  
-  // VALOR ACTUAL DE LAS CUOTAS
-  
-  function PV2() {
-    // OPCION 1
     // Cálculo de la tasa efectiva mensual a partir de la anual
     rate = (Math.pow(1 + anualInflation / 100, 1 / 12) - 1) * 100;
     rate2 = parseFloat(rate) / 100.0;
@@ -104,19 +155,9 @@ function myFunction2(e) {
     });
   
     // Crea card de descripción de valores actuales.
-    actualValuesResults = document.createElement("span");
-    actualValuesResults.setAttribute("id", "actualValuesResults");
-    document.querySelector("#resultados").appendChild(actualValuesResults);
-  
-    actualValueResult = document.createElement("span");
-    actualValueResult.setAttribute("id", "actualValueResult");
-    actualValuesResults.appendChild(actualValueResult);
-    actualValueResult.textContent = "El valor actual de la opción 1 es: ";
-    actualValue$Result = document.createElement("span");
-    actualValueResult.appendChild(actualValue$Result);
-    actualValue$Result.textContent = formatter.format(valoractualresult2) + ". ";
+
     actualValue$Resulttxt = formatter.format(valoractualresult2) + ". ";
-    actualValuesResults.appendChild(document.createElement("br"));
+    
   
     // OPCION 2
 
@@ -148,17 +189,9 @@ function myFunction2(e) {
       objOp2[element] = arr1Op2[index];
     });
   
-    actualValueResultOp2 = document.createElement("span");
-    actualValueResultOp2.setAttribute("id", "actualValueResultOp2");
-    actualValuesResults.appendChild(actualValueResultOp2);
-    actualValueResultOp2.textContent = "El valor actual de la opción 2 es: ";
-    actualValue$ResultOp2 = document.createElement("span");
-    actualValueResultOp2.appendChild(actualValue$ResultOp2);
-    actualValue$ResultOp2.textContent =
-      formatter.format(valoractualresult2op2) + ".";
-  
-      actualValue$ResultOp2txt =
-      formatter.format(valoractualresult2op2)
+
+    actualValue$ResultOp2txt =
+    formatter.format(valoractualresult2op2)
   
     firstResultMessage = document.createElement("span");
     firstResultMessage.setAttribute("id", "mensajederesultado3");
@@ -331,9 +364,5 @@ function myFunction2(e) {
     ; 
 } 
   
-
-
-
-
 myFunction2();
 

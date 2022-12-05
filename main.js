@@ -1,40 +1,18 @@
+// Fecth inflación desde JSON
+let url = "datos.json" 
 
-fetch('datos.json')
+const address = fetch(url)
   .then((response) => response.json())
-  .then((json) => {
-    return json.inflacion_ultimo_mes
-    console.log("esta funciona: "+json.inflacion_ultimo_mes)
-  }) 
-  //console.log(json.inflacion_ultimo_mes)
-//.then((json) => console.log(json.inflacion_ultimo_mes))
+  .then((response) => {
+    return response.inflacionAnual;
+  });
 
+const printAddress = async () => {
+  let rate = await address  ;
+  document.querySelector("#inflacion__number").value = rate
+}; 
 
-  // FETCH 
-  
-  async function fetchText() {
-    let response = await fetch('datos.json');
-    let data = await response.json();
-    let rate = data.inflacion_ultimo_mes;
-    return 
-  }
-
-  fetchText()
-
-let rate = 0
-function fetchJson() {
-    fetch('datos.json')
-    .then((response) => response.json())
-    .then((json) => {
-        console.log("hola: "+ json.inflacion_ultimo_mes) 
-        rate = json.inflacion_ultimo_mes
-          return rate 
-        })
-        
-
-  }
-  
-fetchJson()  
-console.log("inflacion mensual: "+rate)
+printAddress();
 
 
 // MODAL DE BIENVENIDA EN PRIMERA SESIÓN
@@ -171,9 +149,6 @@ function showoptions2() {
 // VALOR TOTAL EN CONTADO
 
 function myFunction(e) {
-
-
-
 
   // OPCIÓN 1
   if (
