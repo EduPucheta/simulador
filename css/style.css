@@ -52,13 +52,18 @@ html body {
   background-image: linear-gradient(160deg, #4A3B99 0%, #F04E98 100%);
 }
 html body nav {
-  height: 75px;
+  height: 48px;
+}
+@media (min-width: 1025px) {
+  html body nav {
+    height: 64px;
+  }
 }
 html body nav img {
   margin-top: 10px;
   margin-left: 5%;
-  width: 210px;
-  height: 50px;
+  width: 160px;
+  height: 38px;
 }
 @media (min-width: 1025px) {
   html body nav img {
@@ -71,11 +76,10 @@ html body nav #myBtn {
   border-radius: 18px;
   color: white;
   font-style: normal;
-  font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   background: none;
-  padding: 10px;
+  padding: 5px;
   float: right;
   margin-top: 25px;
   margin-right: 250px;
@@ -88,13 +92,13 @@ html body nav #myBtn:hover {
 }
 @media (max-width: 1025px) {
   html body nav #myBtn {
-    margin-top: 16px;
+    margin-top: 8px;
     margin-right: 5%;
-    max-width: 90px;
+    max-width: 100px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
-    height: 60px;
+    height: 48px;
   }
 }
 html body h1 {
@@ -439,6 +443,7 @@ html body .cuotas__app form #submitbutton:disabled {
   flex-direction: column;
 }
 #resultados #mensajederesultado3 {
+  font-weight: 700;
   order: -3;
 }
 #resultados #table {

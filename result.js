@@ -323,8 +323,7 @@ anualInflation=urlSearchParams.get('inf');
         {cant: 'Cantidad de cuotas', Cantidaddecuotas: cantidaddecuotas, Cantidaddecuot: cantidaddecuotasOp2 },
         {cant: 'Valor de cada cuota', Val1:valordelacuota4, val1: valordelacuota4Op2 },
         {val: "Suma total de las cuotas", sum1: paymentsSum$Op1txt, sum2: paymentsSum$Op2txt},
-        {val: "Valor actual de las cuotas", val1: actualValue$Resulttxt, val2: actualValue$ResultOp2txt },
-       
+        {val: "Suma ajustado por inflación", val1: actualValue$Resulttxt, val2: actualValue$ResultOp2txt },
     ]
     
     let headers = ['','Opción 1', 'Opción 2'];
