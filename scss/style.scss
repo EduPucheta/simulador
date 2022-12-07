@@ -30,7 +30,7 @@ html {
       }
       #myBtn {
         border: 1px solid $color-primary-1;
-        border-radius: 18px;
+        border-radius: $radius-buttons;
         color: white;
         font-style: normal;
         font-size: 14px;
@@ -42,6 +42,7 @@ html {
         margin-right: 250px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         transition: $transition-speed; 
+        cursor: pointer;
         &:hover{
           background-color: $color-primary-1;
           color: white;
@@ -127,7 +128,7 @@ html {
         top: 16px;
         /* Primary */
         border: none;
-        border-radius:  100px;
+        border-radius:  $radius-buttons;
         cursor: pointer;
         transition: 0.3s;
         &:hover {
@@ -148,7 +149,7 @@ html {
       margin-bottom: $uxg-spacing-5; 
       background-color: #f1f1fa;
       padding: 5%;
-      border-radius: 7px;
+      border-radius: $radius-cards;
       box-shadow: $box-shadow;
       @media (min-width: 1025px) {
         /* big landscape tablets, laptops, and desktops */
@@ -158,7 +159,6 @@ html {
         margin-right: 25%;
         padding: 5%;
         background-color: #f1f1fa;
-        border-radius: 7px;
         box-shadow: $box-shadow;
       }
 
@@ -186,7 +186,7 @@ html {
         background: #F2F2F2;
         /* Grey/Grey-200 */
         border: 2px solid #E6E6E6;
-        border-radius: 10px;
+        border-radius: $radius-chips;
         /* Inside auto layout */
         flex: none;
         order: 1;
@@ -207,7 +207,7 @@ html {
         border: 2px solid #CC3535;
         /* Alert-Shadow */
         box-shadow: 0px 0px 0px 3px #FAEBEB;
-        border-radius: 10px;
+        border-radius: $radius-chips;
         /* Inside auto layout */
         flex: none;
         order: 1;
@@ -220,9 +220,12 @@ html {
           margin-bottom: $uxg-spacing-3;
           display: flex;
           flex-wrap: wrap;
+          justify-content: space-around;
+          padding-left: $uxg-spacing-3;
+          padding-right: $uxg-spacing-3;
           input {
             border: 1px solid rgba(0, 0, 0, 0.12);
-            border-radius: 16px;
+            border-radius: $radius-chips;
             background: $color-button-unselected;
             text-align: center;
             margin-left: 5px;
@@ -235,6 +238,7 @@ html {
             font-size: small;
             padding: 10px;
             transition-duration: 0.3s;
+            cursor: pointer;
             &:hover {
               background: $color-button-chip-op1;
               border: 1px solid $color-button-chip-op1-border;
@@ -250,7 +254,7 @@ html {
             margin-top: 10px;
             border: none;
             box-shadow: none;
-            border-radius: 100px;
+            border-radius: $radius-buttons;
             max-height: 30px;
             width: 100px;
             font-size: small;
@@ -267,9 +271,12 @@ html {
           margin-bottom: $uxg-spacing-3;
           display: flex;
           flex-wrap: wrap;
+          justify-content: space-around;
+          padding-left: $uxg-spacing-3;
+          padding-right: $uxg-spacing-3;
           input {
             border: 1px solid rgba(0, 0, 0, 0.12);
-            border-radius: 16px;
+            border-radius: $radius-chips;
             background: $color-button-unselected;
             text-align: center;
             margin-left: 5px;
@@ -282,9 +289,9 @@ html {
             font-size: small;
             padding: 10px;
             transition-duration: 0.3s;
+            cursor: pointer;
             &:hover {
               border: 1px solid $color-button-chip-op2-border;
-              border-radius: 16px;
             }
           }
           .selected2{
@@ -342,7 +349,8 @@ html {
             text-align: left;
             font-size: 12px;
             display: flex;
-            margin-bottom: $uxg-spacing-3;
+            margin-bottom: $uxg-spacing-4;
+            margin-top: $uxg-spacing-3;
             cursor: pointer;
             p {
               vertical-align: baseline;
@@ -383,8 +391,8 @@ html {
           /* Primary */
           background: $color-dark-primary-0;
           /* Primary */
-          border: none;
-          border-radius: 24px;
+          //border: none;
+          border-radius: $radius-buttons;
           color: white;
           cursor: pointer;
           transition: $transition-speed;
@@ -392,21 +400,11 @@ html {
             background-color: $color-primary-1;
             color: white;
           }
-          &:disabled {
-            box-sizing: border-box;
-            /* Auto layout */
-            /* Primary Dark */
-            background: #372aa3;
-            opacity: 0.4;
-            /* Primary Dark */
-            border: 2px solid $color-background-1;
-            border-radius: 10px;
           }
         }
       }
     }
   }
-}
 
 #resultados2 {
   display: none;
@@ -437,7 +435,7 @@ html {
   margin-right: 5%;
   background-color: #f1f1fa;
   padding: 5%;
-  border-radius: 7px;
+  border-radius: $radius-cards;
   box-shadow: $box-shadow;
   @media (min-width: 1025px) {
     /* big landscape tablets, laptops, and desktops */
@@ -447,7 +445,7 @@ html {
     margin-right: 25%;
     background-color: #f1f1fa;
     padding: 5%;
-    border-radius: 7px;
+    border-radius: $radius-cards;
     box-shadow: $box-shadow;
 
     #mensajederesultado4 {
@@ -468,9 +466,17 @@ html {
     }
     tr th:nth-of-type(2){
       color: $color-secondary-1;
+      text-align: end;
     }
     tr th:nth-of-type(3){
       color: $color-secondary-2; 
+      text-align: end;
+    }
+    tr td:nth-of-type(2){
+      text-align: end;
+    }
+    tr td:nth-of-type(3){
+      text-align: end;
     }
 }
 }
@@ -488,7 +494,7 @@ html {
   height: 44px;
   background: $color-dark-primary-0;
   border: none;
-  border-radius: 24px;
+  border-radius: $radius-buttons;
   color: white;
   cursor: pointer;
   font-weight: 700;
@@ -526,7 +532,7 @@ html {
   opacity: 0;
   color: #000;
   z-index: 5;
-  border-radius: 5px;
+  border-radius: $radius-cards;
   transition: 500ms opacity;
 }
 

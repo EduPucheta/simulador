@@ -90,7 +90,7 @@ let formatter = new Intl.NumberFormat("en-US", {
 });
 
 
-////
+//// EXTRACCION DE PARAMETROS DESDE LA URL
 
 const url = window.location.href; // Gets current URL
 
@@ -107,8 +107,49 @@ cantidaddecuotasOp2=urlSearchParams.get('cuotasOp2');
 valordelacuota4Op2=urlSearchParams.get('valOp2'); 
 anualInflation=urlSearchParams.get('inf'); 
 
+// MODAL DE BIENVENIDA EN PRIMERA SESIÓN
 
-////
+let visits = Number(localStorage.getItem("visitCount"));
+let current = Boolean(sessionStorage.getItem("session"));
+
+if (!current) {
+  visits += 1;
+}
+
+document.addEventListener(
+  "DOMContentLoaded",
+  localStorage.setItem("visitCount", visits)
+);
+document.addEventListener(
+  "DOMContentLoaded",
+  sessionStorage.setItem("session", true)
+);
+
+let modal = document.getElementById("myModal");
+let btnModal = document.getElementById("myBtn");
+let cross = document.getElementsByClassName("close")[0];
+
+btnModal.onclick = function () {
+  modal.style.display = "block";
+};
+
+cross.onclick = function () {
+  modal.style.display = "none";
+};
+
+document.querySelector(".modal-content__start__button").onclick = function () {
+  modal.style.display = "none";
+};
+
+// Cerrar cuando se hace click fuera del modal
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+
+//// FUNCION PARA RESULTADOS
 
   function myFunction2(e) {
     g = document.createElement("div");
@@ -151,7 +192,7 @@ anualInflation=urlSearchParams.get('inf');
       obj[element] = arr2[index];
     });
   
-    actualValue$Resulttxt = formatter.format(valoractualresult2) + ". ";
+    actualValue$Resulttxt = formatter.format(valoractualresult2);
     
     // OPCION 2
     let valoractualresult2op2 = 0;
@@ -283,6 +324,8 @@ anualInflation=urlSearchParams.get('inf');
     // Las etiquetas son las que van en el eje X.
   
     const etiquetas2 = arr1Op2;
+
+    console.log(etiquetas2)
     const datosVentas20202 = {
       label: "Cuota al valor de hoy",
       data: arr2Op2, // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
@@ -295,7 +338,7 @@ anualInflation=urlSearchParams.get('inf');
       data: {
         labels: etiquetas2,
         datasets: [
-          datosVentas20202,
+          datosVentas20202, 
           // Aquí más datos...
         ],
       },
@@ -312,7 +355,7 @@ anualInflation=urlSearchParams.get('inf');
       },
     });
 
-    // Tabla
+    // TABLA
 
     myTable = document.createElement("span");
     myTable.setAttribute("id", "table");
