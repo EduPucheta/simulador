@@ -46,10 +46,13 @@ html {
   min-height: 100%;
 }
 html body {
-  max-height: 70%;
   font-family: "Inter", sans-serif;
   font-style: normal;
-  background-image: linear-gradient(160deg, #4A3B99 0%, #F04E98 100%);
+  background-color: #F04E98;
+}
+html body .background {
+  background-image: linear-gradient(180deg, #4A3B99 0%, #4A3B99 5%, #F04E98 50%);
+  min-height: 900px;
 }
 html body nav {
   height: 48px;
@@ -153,14 +156,17 @@ html body .cuotas__app__option2__title {
 }
 html body .modal-content {
   max-width: 600px;
+  border-radius: 7px;
 }
 html body .modal-content .modal-content__title {
   font-size: larger;
   margin-bottom: 24px;
 }
 html body .modal-content .modal-content__start__button {
+  font-size: medium;
+  text-decoration: none;
   margin-top: 24px;
-  background-color: #694ED6;
+  background-color: #4A3B99;
   color: white;
   box-sizing: border-box;
   /* Auto layout */
@@ -230,9 +236,9 @@ html body .cuotas__app form .input {
   width: 100%;
   height: 44px;
   /* Grey/Grey-100 */
-  background: #F2F2F2;
+  background: #f2f2f2;
   /* Grey/Grey-200 */
-  border: 2px solid #E6E6E6;
+  border: 2px solid #e6e6e6;
   border-radius: 24px;
   /* Inside auto layout */
   flex: none;
@@ -252,9 +258,9 @@ html body .cuotas__app form .input:active {
   flex-grow: 1;
 }
 html body .cuotas__app form .input:invalid {
-  border: 2px solid #CC3535;
+  border: 2px solid #cc3535;
   /* Alert-Shadow */
-  box-shadow: 0px 0px 0px 3px #FAEBEB;
+  box-shadow: 0px 0px 0px 3px #faebeb;
   border-radius: 24px;
   /* Inside auto layout */
   flex: none;
@@ -378,6 +384,10 @@ html body .cuotas__app form #valordelacuota:focus-visible {
 html body .cuotas__app form #valordelacuota2:focus-visible {
   outline-color: rgb(237, 139, 0);
 }
+html body .cuotas__app form .advaced_options__withoptions {
+  margin-bottom: 24px;
+  margin-top: 16px;
+}
 html body .cuotas__app form .advaced_options__withoptions .advaced_options {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -386,8 +396,6 @@ html body .cuotas__app form .advaced_options__withoptions .advaced_options {
   text-align: left;
   font-size: 12px;
   display: flex;
-  margin-bottom: 24px;
-  margin-top: 16px;
   cursor: pointer;
 }
 html body .cuotas__app form .advaced_options__withoptions .advaced_options p {
@@ -448,6 +456,12 @@ html body .cuotas__app form #submitbutton:hover {
   font-weight: 700;
   order: -3;
 }
+#resultados #mensajederesultado3 .firstoption {
+  color: rgb(0, 156, 189);
+}
+#resultados #mensajederesultado3 .secondoption {
+  color: rgb(237, 139, 0);
+}
 #resultados #table {
   order: -2;
 }
@@ -488,7 +502,8 @@ html body .cuotas__app form #submitbutton:hover {
   display: block;
   margin-top: 8px;
 }
-.results__page #table th, .results__page #table td {
+.results__page #table th,
+.results__page #table td {
   padding: 5px;
 }
 .results__page #table tr th:nth-of-type(2) {
@@ -507,11 +522,16 @@ html body .cuotas__app form #submitbutton:hover {
 }
 
 .startover {
+  min-width: 250px;
+  color: white;
   margin-top: 8px;
   margin-bottom: 8px;
-  margin-right: auto;
-  margin-left: auto;
-  display: grid;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   box-sizing: border-box;
   padding: 12px 24px;
@@ -531,6 +551,9 @@ html body .cuotas__app form #submitbutton:hover {
 .startover a {
   text-decoration: none;
   color: white;
+}
+.startover svg {
+  margin-right: 8px;
 }
 
 .tooltip {
@@ -577,4 +600,35 @@ html body .cuotas__app form #submitbutton:hover {
   opacity: 1;
   visibility: visible;
   transition-delay: 500ms;
+}
+
+.share {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  min-width: 250px;
+  color: white;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  height: 44px;
+  background: #4A3B99;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.share svg {
+  margin-right: 8px;
+}
+.share a {
+  text-decoration: none;
+  color: white;
 }/*# sourceMappingURL=style.css.map */

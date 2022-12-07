@@ -2,58 +2,92 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mangos</title>
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MD3JLDZ');</script>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                "gtm.start": new Date().getTime(),
+                event: "gtm.js",
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-MD3JLDZ");
+    </script>
     <!-- End Google Tag Manager -->
-    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="result.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
-    <link rel="icon" type="image/x-icon" href=".\assets\logo-removebg-preview.png">
+    <link rel="icon" type="image/x-icon" href=".\assets\logo-removebg-preview.png" />
 </head>
 
 <body>
+    <div class="background">
         <!-- The Modal -->
         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p class="modal-content__title">Bienvenido a Mangos! </p>
-                <p>Compará entre dos opciones de financiación y descubrí como te conviene pagar tu compra teniendo en cuenta la inflación y la forma de pago que elijas.</p>
-                <p>Para cada opción elegí en cuantas cuotas podés pagar y el valor de cada cuota. </p>
-                <p>A demás del plan en cuotas  podés elegir como opción pagar en contado eligiendo la forma de pago "Contado" e ingresando el valor total de la compra.</p>
-                <p>La mejor opción de financiación será la que genere el menor valor actual.</p>
+                <p class="modal-content__title">Bienvenido a Mangos! 👋🏼</p>
+                <p>
+                    Compará entre dos opciones de financiación y descubrí como te
+                    conviene pagar tu compra teniendo en cuenta la inflación y la forma
+                    de pago que elijas.
+                </p>
+                <p>
+                    Para cada opción elegí en cuantas cuotas podés pagar y el valor de
+                    cada cuota.
+                </p>
+                <p>
+                    A demás del plan en cuotas podés elegir como opción pagar en contado
+                    eligiendo la forma de pago "Contado" e ingresando el valor total de
+                    la compra.
+                </p>
+                <p>
+                    La mejor opción de financiación será la que genere el menor valor
+                    actual.
+                </p>
                 <a class="modal-content__start__button" href="/">Empezar!</a>
             </div>
         </div>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD3JLDZ" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- Just an image -->
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="/">
-            <img src=".\assets\mangos-logo.png" alt="">
-        </a>
-        <button id="myBtn">Como funciona</button>
-    </nav>
-    <div class="results__page">
-        <span><div id="table"></div></span>
-        <button class="startover">
-            <a href="/" >Volver a comparar</a>
-        </button>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD3JLDZ" height="0" width="0"
+                style="display: none; visibility: hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <!-- Just an image -->
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src=".\assets\mangos-logo.png" alt="" />
+            </a>
+            <button id="myBtn">Como funciona</button>
+        </nav>
+        <div class="results__page">
+            <span>
+                <div id="table"></div>
+            </span>
+            <button class="share">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="white"/>
+                    </svg>
+                <a>Compartir resultado</a>
+            </button>
+            <button class="startover">
+                <svg width="21" height="9" viewBox="0 0 21 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.5 1C7.85 1 5.45 1.99 3.6 3.6L0 0V9H9L5.38 5.38C6.77 4.22 8.54 3.5 10.5 3.5C14.04 3.5 17.05 5.81 18.1 9L20.47 8.22C19.08 4.03 15.15 1 10.5 1Z" fill="white"/>
+                    </svg>                    
+                <a href="/">Volver a comparar</a>
+            </button>
+        </div>
     </div>
 </body>
 

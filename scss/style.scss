@@ -9,10 +9,18 @@
 html {
   min-height: 100%;
   body {
-    max-height: 70%;
     font-family: $font-family;
     font-style: normal;
-    background-image: linear-gradient(160deg, $color-dark-primary-0 0%, $color-primary-1 100%);
+    background-color: $color-primary-1;
+    .background {
+      background-image: linear-gradient(
+        180deg,
+        $color-dark-primary-0 0%,
+        $color-dark-primary-0 5%,
+        $color-primary-1 50%
+      );
+      min-height: 900px;
+    }
     nav {
       height: 48px;
       @media (min-width: 1025px) {
@@ -20,8 +28,8 @@ html {
       }
       img {
         margin-top: 10px;
-        margin-left: 5%; 
-        width:160px;
+        margin-left: 5%;
+        width: 160px;
         height: 38px;
         @media (min-width: 1025px) {
           margin-left: 200px;
@@ -41,9 +49,9 @@ html {
         margin-top: 25px;
         margin-right: 250px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: $transition-speed; 
+        transition: $transition-speed;
         cursor: pointer;
-        &:hover{
+        &:hover {
           background-color: $color-primary-1;
           color: white;
         }
@@ -74,7 +82,7 @@ html {
         margin-right: 25%;
       }
     }
-    .description{
+    .description {
       margin-left: 5%;
       margin-right: 5%;
       margin-top: $uxg-spacing-3;
@@ -91,28 +99,30 @@ html {
       }
     }
     h2 {
-      margin-top: $uxg-spacing-3 ;
+      margin-top: $uxg-spacing-3;
       margin-bottom: $uxg-spacing-3;
       font-weight: 900;
-      font-size: 18px; 
+      font-size: 18px;
       text-align: center;
     }
-    .cuotas__app__option1__title{
+    .cuotas__app__option1__title {
       color: $color-secondary-1;
     }
-    .cuotas__app__option2__title{ 
-
+    .cuotas__app__option2__title {
       color: $color-secondary-2;
     }
     .modal-content {
       max-width: 600px;
+      border-radius: $radius-cards;
       .modal-content__title {
         font-size: larger;
         margin-bottom: $uxg-spacing-4;
       }
       .modal-content__start__button {
+        font-size: medium;
+        text-decoration: none;
         margin-top: $uxg-spacing-4;
-        background-color: $color-primary-0;
+        background-color: $color-dark-primary-0;
         color: white;
         box-sizing: border-box;
         /* Auto layout */
@@ -128,15 +138,15 @@ html {
         top: 16px;
         /* Primary */
         border: none;
-        border-radius:  $radius-buttons;
+        border-radius: $radius-buttons;
         cursor: pointer;
         transition: 0.3s;
         &:hover {
-          background-color: $color-primary-1; 
+          background-color: $color-primary-1;
           color: white;
         }
       }
-      p{
+      p {
         margin-top: $uxg-spacing-2;
         margin-left: $uxg-spacing-2;
         margin-right: $uxg-spacing-2;
@@ -146,7 +156,7 @@ html {
     .cuotas__app {
       margin-left: 5%;
       margin-right: 5%;
-      margin-bottom: $uxg-spacing-5; 
+      margin-bottom: $uxg-spacing-5;
       background-color: #f1f1fa;
       padding: 5%;
       border-radius: $radius-cards;
@@ -162,59 +172,58 @@ html {
         box-shadow: $box-shadow;
       }
 
-
       // background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(97, 186, 255, 1) 0%, rgba(166, 239, 253, 1) 90.1%);
       form {
         display: flex;
         flex-direction: column;
         font-style: normal;
         font-weight: 800;
-        .input{
+        .input {
           text-align: left;
-        /* Button */
-        box-sizing: border-box;
-        /* Auto layout */
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 12px 16px;
-        gap: 10px;
-        color: black;
-        width: 100%;
-        height: 44px;
-        /* Grey/Grey-100 */
-        background: #F2F2F2;
-        /* Grey/Grey-200 */
-        border: 2px solid #E6E6E6;
-        border-radius: $radius-chips;
-        /* Inside auto layout */
-        flex: none;
-        order: 1;
-        align-self: stretch;
-        flex-grow: 0;
-        &:active{
-          /* Frame 1 */
-        /* Auto layout */
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        /* Inside auto layout */
-        flex: none;
-        order: 0;
-        flex-grow: 1;
-        }
-        &:invalid{
-        border: 2px solid #CC3535;
-        /* Alert-Shadow */
-        box-shadow: 0px 0px 0px 3px #FAEBEB;
-        border-radius: $radius-chips;
-        /* Inside auto layout */
-        flex: none;
-        order: 1;
-        align-self: stretch;
-        flex-grow: 0;
-        }
+          /* Button */
+          box-sizing: border-box;
+          /* Auto layout */
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 12px 16px;
+          gap: 10px;
+          color: black;
+          width: 100%;
+          height: 44px;
+          /* Grey/Grey-100 */
+          background: #f2f2f2;
+          /* Grey/Grey-200 */
+          border: 2px solid #e6e6e6;
+          border-radius: $radius-chips;
+          /* Inside auto layout */
+          flex: none;
+          order: 1;
+          align-self: stretch;
+          flex-grow: 0;
+          &:active {
+            /* Frame 1 */
+            /* Auto layout */
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 1;
           }
+          &:invalid {
+            border: 2px solid #cc3535;
+            /* Alert-Shadow */
+            box-shadow: 0px 0px 0px 3px #faebeb;
+            border-radius: $radius-chips;
+            /* Inside auto layout */
+            flex: none;
+            order: 1;
+            align-self: stretch;
+            flex-grow: 0;
+          }
+        }
         #chip__cuotas1 {
           margin-top: $uxg-spacing-3;
           margin-bottom: $uxg-spacing-3;
@@ -285,7 +294,7 @@ html {
             margin-bottom: 5px;
             box-shadow: none;
             max-height: 37px;
-            width: 86px; 
+            width: 86px;
             font-size: small;
             padding: 10px;
             transition-duration: 0.3s;
@@ -294,7 +303,7 @@ html {
               border: 1px solid $color-button-chip-op2-border;
             }
           }
-          .selected2{
+          .selected2 {
             background-color: rgba(237, 139, 0, 0.16);
             border: 1px solid rgba(237, 139, 0, 1);
           }
@@ -303,7 +312,7 @@ html {
         #cantidaddecuotas {
           display: none;
           transition-duration: 0.3s;
-          &:focus-visible{
+          &:focus-visible {
             outline-color: $color-secondary-1;
           }
         }
@@ -328,36 +337,36 @@ html {
             margin: 10px 0;
           }
         }
-        #valordelacuota{
+        #valordelacuota {
           //background-color: $color-button-chip-op1-selected ;
-          &:focus-visible{
+          &:focus-visible {
             outline-color: $color-secondary-1;
           }
         }
 
-        #valordelacuota2{
+        #valordelacuota2 {
           // background-color: $color-button-chip-op2-selected ;
-          &:focus-visible{
+          &:focus-visible {
             outline-color: $color-secondary-2;
           }
         }
 
         .advaced_options__withoptions {
+          margin-bottom: $uxg-spacing-4;
+          margin-top: $uxg-spacing-3;
           .advaced_options {
             width: fit-content;
-            display: block; 
+            display: block;
             text-align: left;
             font-size: 12px;
             display: flex;
-            margin-bottom: $uxg-spacing-4;
-            margin-top: $uxg-spacing-3;
             cursor: pointer;
             p {
               vertical-align: baseline;
               margin-left: 5px;
               margin-top: auto;
               margin-bottom: auto;
-              color: $color-font;              
+              color: $color-font;
             }
           }
         }
@@ -372,7 +381,6 @@ html {
             margin-left: 5px;
           }
         }
-
 
         #submitbutton {
           font-weight: 700;
@@ -400,11 +408,11 @@ html {
             background-color: $color-primary-1;
             color: white;
           }
-          }
         }
       }
     }
   }
+}
 
 #resultados2 {
   display: none;
@@ -419,6 +427,12 @@ html {
     font-weight: 700;
     //order: 1;
     order: -3;
+    .firstoption{
+      color: $color-secondary-1
+    }
+    .secondoption{
+      color: $color-secondary-2
+    }
   }
   #table {
     //order: 1;
@@ -457,37 +471,42 @@ html {
   }
 }
 
-.results__page{
+.results__page {
   #table {
     display: block;
     margin-top: $uxg-spacing-2;
-    th, td {
+    th,
+    td {
       padding: 5px;
     }
-    tr th:nth-of-type(2){
+    tr th:nth-of-type(2) {
       color: $color-secondary-1;
       text-align: end;
     }
-    tr th:nth-of-type(3){
-      color: $color-secondary-2; 
+    tr th:nth-of-type(3) {
+      color: $color-secondary-2;
       text-align: end;
     }
-    tr td:nth-of-type(2){
+    tr td:nth-of-type(2) {
       text-align: end;
     }
-    tr td:nth-of-type(3){
+    tr td:nth-of-type(3) {
       text-align: end;
     }
-}
+  }
 }
 
-
-.startover { 
+.startover {
+  min-width: 250px;
+  color: white;
   margin-top: $uxg-spacing-2;
   margin-bottom: $uxg-spacing-2;
-  margin-right: auto;
-  margin-left: auto;
-  display: grid;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   box-sizing: border-box;
   padding: 12px 24px;
@@ -503,12 +522,14 @@ html {
     background-color: $color-primary-1;
     color: white;
   }
-  a{
+  a {
     text-decoration: none;
     color: white;
   }
+  svg{
+    margin-right: $uxg-spacing-2;
+  }
 }
-
 
 .tooltip {
   display: inline;
@@ -516,7 +537,7 @@ html {
   font-weight: 500;
   color: #fff;
   position: relative;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .tooltip::before {
@@ -528,7 +549,7 @@ html {
   min-width: 200px;
   background: #d4edf4;
   padding: 5px 10px;
-  visibility: hidden; 
+  visibility: hidden;
   opacity: 0;
   color: #000;
   z-index: 5;
@@ -553,5 +574,37 @@ html {
 .tooltip:hover::after {
   opacity: 1;
   visibility: visible;
-  transition-delay: 500ms; 
+  transition-delay: 500ms;
 }
+
+.share{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  min-width: 250px;
+  color: white;
+  margin-top: $uxg-spacing-2;
+  margin-bottom: $uxg-spacing-2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  height: 44px;
+  background: $color-dark-primary-0;
+  border: none;
+  border-radius: $radius-buttons;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  transition: $transition-speed;
+  svg{
+    margin-right: $uxg-spacing-2;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+} 
+

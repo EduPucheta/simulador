@@ -1,17 +1,18 @@
 // Fecth inflación desde JSON
-let url = "datos.json" 
+let url = "datos.json"
 
 const fetchJson = fetch(url)
   .then((response) => response.json())
   .then((response) => {
-    return response.inflacionAnual;})
-  .catch ((error) => {console.log("error fetch")})  
+    return response.inflacionAnual;
+  })
+  .catch((error) => { console.log("error fetch") })
   ;
 
 const updateInflationFetch = async () => {
-  let rate = await fetchJson  ;
+  let rate = await fetchJson;
   document.querySelector("#inflacion__number").value = rate
-}; 
+};
 
 updateInflationFetch();
 
@@ -143,7 +144,7 @@ function showoptions2() {
   if (x.style.display === "inline") {
     x.style.display = "none";
   } else {
-    x.style.display = "inline"; 
+    x.style.display = "inline";
   }
 }
 
@@ -168,7 +169,7 @@ function myFunction(e) {
   const valordelacuota = document.getElementById("valordelacuota").value;
   const valordelacuota2 = valordelacuota.replace("$", "");
   const valordelacuota4 = valordelacuota2.replace(",", "");
-  
+
 
   // OPCIÓN 2
   if (
@@ -227,30 +228,24 @@ function PV() {
 
   // Acá se calcula el valor actual de la suma de las cuotas//
 
-// QUERY STRING
-const query = new URLSearchParams({
-  cuotasOp1: cantidaddecuotas, 
-  valOp1: valordelacuota4,
-  cuotasOp2: cantidaddecuotasOp2,
-  valOp2: valordelacuota4Op2,
-  inf: anualInflation,
-}); 
+  // QUERY STRING
+  const query = new URLSearchParams({
+    cuotasOp1: cantidaddecuotas,
+    valOp1: valordelacuota4,
+    cuotasOp2: cantidaddecuotasOp2,
+    valOp2: valordelacuota4Op2,
+    inf: anualInflation,
+  });
 
-const queryString = query.toString(); 
+  const queryString = query.toString();
 
-console.log(queryString);
+  console.log(queryString);
 
-const url = window.location.href + '/resultado.html?' + queryString
+  const url = '/resultado.html?' + queryString
 
-window.location.href = url;
+  window.location.href = url;
 
 }
-
-
-
-
-
-
 
 //Estas funciones las obtuve de Stackoverflow y sirven para aplicar el formato de $$ en los inputs del form
 

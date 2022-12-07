@@ -22,14 +22,14 @@ Mes a mes se irá actualizando el JSON con el dato de la inflación del mes ante
 
 ### Bugs pendientes
 
-1. Cuando se elije un plan en contado la suma de cuotas en la página de resultados da cero. 
-2. Cuando se inserta el valor de las cuotas en la primera pantalla, debería desplegar el teclado numérico en mobile. 
-3. Falta formato de $ en el tooltip de los charts. 
+1. Cuando se elije un plan en contado la suma de cuotas en la página de resultados da cero. También el mensaje de resultado de la primera card hay que optimizarlo para dicho caso.
+2. Falta formato de $ en el tooltip de los charts. 
 
 ### Mejoras a futuro
-1. Mejorar la UI de como se muestran los resultados., especialmente en desktop. 
+1. Mejorar la UI especialmente en desktop. 
 2. Agregar más contendio explicativo en la página de resultados.
 3. Agregar validación en los inputs de la primera pantalla.
+4. Los nombres de las variables de JS son medio confusos, se pueden mejorar.
 
 ### Sugerencias para testear
 
