@@ -372,6 +372,10 @@ html body .cuotas__app form #valordelacuota2:focus-visible {
   outline-color: rgb(237, 139, 0);
 }
 html body .cuotas__app form .advaced_options__withoptions .advaced_options {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
   text-align: left;
   font-size: 12px;
   display: flex;
@@ -530,13 +534,14 @@ html body .cuotas__app form #submitbutton:disabled {
   font-weight: 500;
   color: #fff;
   position: relative;
+  cursor: pointer;
 }
 
 .tooltip::before {
   content: attr(data-tooltip);
   font-size: 15px;
   position: absolute;
-  left: 20%;
+  left: -1500%;
   bottom: 100%;
   min-width: 200px;
   background: #d4edf4;
@@ -566,4 +571,5 @@ html body .cuotas__app form #submitbutton:disabled {
 .tooltip:hover::after {
   opacity: 1;
   visibility: visible;
+  transition-delay: 500ms;
 }/*# sourceMappingURL=style.css.map */
