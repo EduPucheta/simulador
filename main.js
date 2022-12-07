@@ -140,10 +140,10 @@ function showoptions4() {
 
 function showoptions2() {
   let x = document.getElementById("advanced__options");
-  if (x.style.display === "flex") {
+  if (x.style.display === "inline") {
     x.style.display = "none";
   } else {
-    x.style.display = "flex";
+    x.style.display = "inline"; 
   }
 }
 
