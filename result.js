@@ -405,11 +405,11 @@ function myFunction2(e) {
   ;
   if (valoractualresult2op2 > valoractualresult2) {
     document.querySelector("#table > table > tr:nth-child(5) > td:nth-child(2)").prepend("👌")
-    document.querySelector("#table > table > tr:nth-child(5) > td:nth-child(2)").style.color="green"
+    document.querySelector("#table > table > tr:nth-child(5) > td:nth-child(2)").style.color="#008744"
   }
   if (valoractualresult2op2 < valoractualresult2) {
     document.querySelector("#table > table > tr:nth-child(5) > td:nth-child(3)").prepend("👌")
-    document.querySelector("#table > table > tr:nth-child(5) > td:nth-child(3)").style.color="green" 
+    document.querySelector("#table > table > tr:nth-child(5) > td:nth-child(3)").style.color="#008744" 
   }
 }
 

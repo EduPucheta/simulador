@@ -47,7 +47,6 @@ html {
 }
 html body {
   font-family: "Inter", sans-serif;
-  font-style: normal;
   background-color: #F04E98;
 }
 html body .background {
@@ -144,15 +143,23 @@ html body .description {
 html body h2 {
   margin-top: 16px;
   margin-bottom: 16px;
-  font-weight: 900;
   font-size: 18px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-text-decoration-style: "solid";
+          text-decoration-style: "solid";
+  text-decoration-thickness: 4px;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
   text-align: center;
 }
 html body .cuotas__app__option1__title {
-  color: rgb(0, 156, 189);
+  -webkit-text-decoration-color: rgb(0, 156, 189);
+          text-decoration-color: rgb(0, 156, 189);
 }
 html body .cuotas__app__option2__title {
-  color: rgb(237, 139, 0);
+  -webkit-text-decoration-color: rgb(237, 139, 0);
+          text-decoration-color: rgb(237, 139, 0);
 }
 html body .modal-content {
   max-width: 600px;
@@ -296,11 +303,11 @@ html body .cuotas__app form #chip__cuotas1 input {
 }
 html body .cuotas__app form #chip__cuotas1 input:hover {
   background: rgba(0, 156, 189, 0.04);
-  border: 1px solid rgb(0, 156, 189);
+  border: 1px solid #009cbd;
 }
 html body .cuotas__app form #chip__cuotas1 .selected {
   background: rgba(0, 156, 189, 0.16);
-  border: 1px solid rgb(0, 156, 189);
+  border: 1px solid #009cbd;
 }
 html body .cuotas__app form #chip__cuotas1 button {
   margin-top: 10px;
@@ -569,14 +576,14 @@ html body .cuotas__app form #submitbutton:hover {
   content: attr(data-tooltip);
   font-size: 15px;
   position: absolute;
-  left: -1500%;
+  left: -1000%;
   bottom: 100%;
-  min-width: 200px;
-  background: #d4edf4;
+  min-width: 370px;
+  background: #505050;
   padding: 5px 10px;
   visibility: hidden;
   opacity: 0;
-  color: #000;
+  color: white;
   z-index: 5;
   border-radius: 7px;
   transition: 500ms opacity;
@@ -589,7 +596,7 @@ html body .cuotas__app form #submitbutton:hover {
   bottom: 92%;
   width: 8px;
   height: 8px;
-  background: #d4edf4;
+  background: #505050;
   opacity: 0;
   transform: rotate(45deg);
   transition: 500ms opacity;

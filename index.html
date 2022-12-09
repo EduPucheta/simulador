@@ -67,9 +67,9 @@
                 </p>
                 <p>
                     La mejor opción de financiación será la que genere el menor valor
-                    actual.
+                    ajustado por inflación.
                 </p>
-                <button class="modal-content__start__button">Empezar!</button>
+                <button class="modal-content__start__button">Empezar! 😎</button>
             </div>
         </div>
         <h1>Te ayudamos a hacer que tus mangos rindan más 🚀</h1>
@@ -81,7 +81,7 @@
         <div class="cuotas__app">
             <form method="get" id="form1" class="._bg__input" autocomplete="off">
                 <h2 class="cuotas__app__option1__title">Primera opción</h2>
-                <label for="cantidaddecuotas">Forma de pago
+                <label for="cantidaddecuotas">
                     <div class="chips__cuotas" id="chip__cuotas1">
                         <input type="button" class="cuotas" value="Contado" data-test="0" />
                         <input type="button" class="cuotas" value="1 cuota" data-test="1" />
@@ -93,11 +93,20 @@
                     <input type="number" id="cantidaddecuotas" class="input label" name="cantidaddecuotas"
                         placeholder="Ejemplo: 9 cuotas" min="1" max="10000" />
                 </label>
-                <label for="valordelacuota">Valor de cada cuota o precio contado
+                <label for="valordelacuota">Valor de cada cuota 
+                    <div class="tooltip"
+                    data-tooltip="En caso de elegir contado ingresar el valor total de la compra">
+                         <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                            <path
+                            d="M11 15H13V17H11V15ZM11 7H13V13H11V7ZM11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z"
+                            fill="black" />
+                         </svg>
+                    </div> 
                     <input type="text" inputmode="numeric" id="valordelacuota" class="input label" name="valordelacuota"
                         data-type="currency" placeholder="$" /></label>
                 <h2 class="cuotas__app__option2__title">Segunda opción</h2>
-                <label for="cantidaddecuotas2">Forma de pago
+                <label for="cantidaddecuotas2">
                     <div class="chips__cuotas" id="chip__cuotas2">
                         <input type="button" class="cuotas2" value="Contado" data-test2="0" />
                         <input type="button" class="cuotas2" value="1 cuota" data-test2="1" />
@@ -110,7 +119,16 @@
                         placeholder="Ejemplo: 9 cuotas" min="1" max="10000" />
                 </label>
 
-                <label for="valordelacuota2">Valor de cada cuota o precio contado
+                <label for="valordelacuota2">Valor de cada cuota
+                    <div class="tooltip"
+                    data-tooltip="En caso de elegir contado ingresar el valor total de la compra">
+                         <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                            <path
+                            d="M11 15H13V17H11V15ZM11 7H13V13H11V7ZM11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z"
+                            fill="black" />
+                         </svg>
+                    </div>  
                     <input type="text" inputmode="numeric" id="valordelacuota2" class="input label"
                         name="valordelacuota2" data-type="currency" placeholder="$" /></label>
                 <div class="advaced_options__withoptions">
@@ -138,7 +156,7 @@
                         </label>
                     </div>
                 </div>
-                <a type="button" form="form1" id="submitbutton" value="Submit" onclick="myFunction()">📊 Comparar</a>
+                <a type="button" form="form1" id="submitbutton" value="Submit" onclick="myFunction()">Comparar 📊</a>
             </form>
         </div>
     </div>
